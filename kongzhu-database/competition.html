@@ -1,0 +1,340 @@
+<html lang="zh-CN"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>空竹竞赛信息 - 中国空竹数据库系统</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#C53030',
+            secondary: '#D69E2E',
+            tertiary: '#1A365D',
+            neutral: '#F7FAFC',
+            'neutral-dark': '#2D3748',
+          },
+          fontFamily: {
+            'zcool-xiaowei': ['"ZCOOL XiaoWei"', 'serif'],
+            'zcool-qingke': ['"ZCOOL QingKe HuangYou"', 'sans-serif'],
+          },
+        },
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto { content-visibility: auto; }
+      .text-shadow { text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); }
+      .text-shadow-lg { text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7); }
+      .animate-float { animation: float 3s ease-in-out infinite; }
+      .animate-spin-slow { animation: spin 15s linear infinite; }
+      .bg-blur { backdrop-filter: blur(8px); }
+    }
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+  </style>
+</head>
+<body class="font-sans bg-neutral text-neutral-dark">
+
+  <header id="navbar" class="fixed w-full top-0 z-50 bg-primary/90 text-white shadow-lg">
+    <nav>
+      <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+        <div class="flex items-center">
+          <div class="w-12 h-12 mr-3 relative">
+            <div class="absolute inset-0 animate-spin-slow">
+              <i class="fa fa-circle-o-notch text-secondary text-3xl"></i>
+            </div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <i class="fa fa-circle text-primary text-2xl"></i>
+            </div>
+          </div>
+          <a href="index.html" class="text-2xl font-zcool-qingke tracking-wider">中国空竹数据库</a>
+        </div>
+        <div class="hidden md:flex space-x-8">
+          <a href="index.html" class="hover:text-secondary transition-colors duration-300">首页</a>
+          <a href="policy.html" class="hover:text-secondary transition-colors duration-300">政策知识</a>
+          <a href="heritage.html" class="hover:text-secondary transition-colors duration-300">传承人物</a>
+          <a href="activities.html" class="hover:text-secondary transition-colors duration-300">活动新闻</a>
+          <a href="courses.html" class="hover:text-secondary transition-colors duration-300">学习课程</a>
+          <a href="competition.html" class="text-secondary font-bold transition-colors duration-300">竞赛信息</a>
+          <a href="products.html" class="hover:text-secondary transition-colors duration-300">文创产品</a>
+        </div>
+        <button id="menu-toggle" class="md:hidden text-white text-2xl focus:outline-none"><i class="fa fa-bars"></i></button>
+      </div>
+      <div id="mobile-menu" class="md:hidden hidden bg-primary/95 py-4 px-4 shadow-lg">
+        <div class="flex flex-col space-y-4">
+          <a href="index.html" class="hover:text-secondary transition-colors duration-300 py-2">首页</a>
+          <a href="policy.html" class="hover:text-secondary transition-colors duration-300 py-2">政策知识</a>
+          <a href="heritage.html" class="hover:text-secondary transition-colors duration-300 py-2">传承人物</a>
+          <a href="activities.html" class="hover:text-secondary transition-colors duration-300 py-2">活动新闻</a>
+          <a href="courses.html" class="hover:text-secondary transition-colors duration-300 py-2">学习课程</a>
+          <a href="competition.html" class="text-secondary font-bold py-2">竞赛信息</a>
+          <a href="products.html" class="hover:text-secondary transition-colors duration-300 py-2">文创产品</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <section class="relative pt-28 pb-16 bg-tertiary text-white">
+    <div class="container mx-auto px-4 text-center">
+      <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-zcool-xiaowei mb-4">空竹竞赛信息</h1>
+      <div class="w-24 h-1 bg-secondary mx-auto mb-6"></div>
+      <p class="text-lg text-white/80 max-w-3xl mx-auto">了解国内外空竹竞赛动态，掌握赛事规则与报名信息，参与空竹竞技</p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
+        <div class="bg-white rounded-xl shadow-lg p-6">
+          <h2 class="text-2xl font-bold text-tertiary mb-6">近期空竹赛事</h2>
+          <div class="space-y-6">
+            <div class="border-l-4 border-primary pl-4 py-2 hover:bg-neutral/30 transition-colors duration-300 rounded-r-lg">
+              <div class="flex justify-between items-start">
+                <div>
+                  <span class="bg-primary/10 text-primary text-xs font-bold px-3 py-1 rounded-full">国内赛事</span>
+                  <h3 class="text-xl font-bold text-tertiary mt-2">2025年全国空竹锦标赛</h3>
+                </div>
+                <div class="bg-tertiary text-white p-3 rounded-lg text-center min-w-[80px]"><div class="text-xl font-bold">18</div><div class="text-sm">七月</div></div>
+              </div>
+              <p class="text-neutral-dark/70 mt-3">由国家体育总局社会体育指导中心主办的全国性空竹赛事，设青少年组、成人组和老年组三个年龄组别，包含个人技巧赛、双人配合赛、团体表演赛和创意编排赛四大类项目，将选拔优秀选手参加国际比赛。</p>
+              <div class="mt-3 flex flex-wrap gap-2"><span class="bg-neutral text-neutral-dark/70 text-xs px-3 py-1 rounded-full">个人赛</span><span class="bg-neutral text-neutral-dark/70 text-xs px-3 py-1 rounded-full">团体赛</span><span class="bg-neutral text-neutral-dark/70 text-xs px-3 py-1 rounded-full">创意编排</span></div>
+              <a href="#" class="inline-block mt-4 text-primary hover:text-primary/80 transition-colors duration-300">查看详情 <i class="fa fa-angle-right ml-1"></i></a>
+            </div>
+            <div class="border-l-4 border-secondary pl-4 py-2 hover:bg-neutral/30 transition-colors duration-300 rounded-r-lg">
+              <div class="flex justify-between items-start">
+                <div>
+                  <span class="bg-secondary/10 text-secondary text-xs font-bold px-3 py-1 rounded-full">国际赛事</span>
+                  <h3 class="text-xl font-bold text-tertiary mt-2">第十届亚洲空竹锦标赛</h3>
+                </div>
+                <div class="bg-tertiary text-white p-3 rounded-lg text-center min-w-[80px]"><div class="text-xl font-bold">05</div><div class="text-sm">九月</div></div>
+              </div>
+              <p class="text-neutral-dark/70 mt-3">亚洲地区规模最大的空竹赛事，每两年举办一届。本届锦标赛由亚洲空竹联盟主办，来自中国、日本、韩国、新加坡、马来西亚、泰国、越南等12个国家和地区的选手将同台竞技，展示亚洲空竹最高竞技水平。</p>
+              <div class="mt-3 flex flex-wrap gap-2"><span class="bg-neutral text-neutral-dark/70 text-xs px-3 py-1 rounded-full">传统技法</span><span class="bg-neutral text-neutral-dark/70 text-xs px-3 py-1 rounded-full">创新表演</span><span class="bg-neutral text-neutral-dark/70 text-xs px-3 py-1 rounded-full">青少年组</span></div>
+              <a href="#" class="inline-block mt-4 text-primary hover:text-primary/80 transition-colors duration-300">查看详情 <i class="fa fa-angle-right ml-1"></i></a>
+            </div>
+            <div class="border-l-4 border-tertiary pl-4 py-2 hover:bg-neutral/30 transition-colors duration-300 rounded-r-lg">
+              <div class="flex justify-between items-start">
+                <div>
+                  <span class="bg-tertiary/10 text-tertiary text-xs font-bold px-3 py-1 rounded-full">地方赛事</span>
+                  <h3 class="text-xl font-bold text-tertiary mt-2">北京市第15届空竹艺术节</h3>
+                </div>
+                <div class="bg-tertiary text-white p-3 rounded-lg text-center min-w-[80px]"><div class="text-xl font-bold">22</div><div class="text-sm">八月</div></div>
+              </div>
+              <p class="text-neutral-dark/70 mt-3">北京市规模最大的空竹文化盛会，包含空竹比赛、表演、展览、体验互动等多项活动。设置市民组、学生组、专业组三个组别，是首都空竹爱好者的年度文化盛宴，预计参与人数超过5000人。</p>
+              <div class="mt-3 flex flex-wrap gap-2"><span class="bg-neutral text-neutral-dark/70 text-xs px-3 py-1 rounded-full">市民组</span><span class="bg-neutral text-neutral-dark/70 text-xs px-3 py-1 rounded-full">学生组</span><span class="bg-neutral text-neutral-dark/70 text-xs px-3 py-1 rounded-full">大师表演</span></div>
+              <a href="#" class="inline-block mt-4 text-primary hover:text-primary/80 transition-colors duration-300">查看详情 <i class="fa fa-angle-right ml-1"></i></a>
+            </div>
+            <div class="border-l-4 border-[#38A169] pl-4 py-2 hover:bg-neutral/30 transition-colors duration-300 rounded-r-lg">
+              <div class="flex justify-between items-start">
+                <div>
+                  <span class="bg-[#38A169]/10 text-[#38A169] text-xs font-bold px-3 py-1 rounded-full">省级赛事</span>
+                  <h3 class="text-xl font-bold text-tertiary mt-2">山东省空竹技艺交流大赛</h3>
+                </div>
+                <div class="bg-tertiary text-white p-3 rounded-lg text-center min-w-[80px]"><div class="text-xl font-bold">10</div><div class="text-sm">十月</div></div>
+              </div>
+              <p class="text-neutral-dark/70 mt-3">山东省文化和旅游厅主办的省级空竹赛事，面向全省空竹爱好者和专业选手开放，设传统技法、创新表演、青少年和团体四个竞赛单元，推动山东省空竹竞技水平整体提升。</p>
+              <div class="mt-3 flex flex-wrap gap-2"><span class="bg-neutral text-neutral-dark/70 text-xs px-3 py-1 rounded-full">传统技法</span><span class="bg-neutral text-neutral-dark/70 text-xs px-3 py-1 rounded-full">创新表演</span></div>
+              <a href="#" class="inline-block mt-4 text-primary hover:text-primary/80 transition-colors duration-300">查看详情 <i class="fa fa-angle-right ml-1"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-lg p-6">
+          <h2 class="text-2xl font-bold text-tertiary mb-6">竞赛数据统计</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <div class="bg-neutral rounded-xl p-5 text-center transform hover:-translate-y-1 transition-transform duration-300"><div class="text-4xl font-bold text-primary mb-2">32</div><div class="text-neutral-dark/70">国内年度赛事数量</div></div>
+            <div class="bg-neutral rounded-xl p-5 text-center transform hover:-translate-y-1 transition-transform duration-300"><div class="text-4xl font-bold text-secondary mb-2">18</div><div class="text-neutral-dark/70">国际参与国家数量</div></div>
+            <div class="bg-neutral rounded-xl p-5 text-center transform hover:-translate-y-1 transition-transform duration-300"><div class="text-4xl font-bold text-tertiary mb-2">5,000+</div><div class="text-neutral-dark/70">年度参赛总人数</div></div>
+            <div class="bg-neutral rounded-xl p-5 text-center transform hover:-translate-y-1 transition-transform duration-300"><div class="text-4xl font-bold text-primary mb-2">12</div><div class="text-neutral-dark/70">世界冠军头衔数</div></div>
+          </div>
+          <h3 class="text-lg font-bold text-tertiary mb-4">近年国际赛事获奖统计</h3>
+          <div class="h-80"><canvas id="competitionChart"></canvas></div>
+        </div>
+      </div>
+
+      <div class="mb-20">
+        <h2 class="text-3xl font-zcool-xiaowei text-tertiary mb-4 text-center">竞赛规则与评分标准</h2>
+        <div class="w-24 h-1 bg-secondary mx-auto mb-12"></div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-white rounded-xl shadow-lg p-8 border-t-4 border-primary">
+            <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-4"><i class="fa fa-balance-scale text-primary text-xl"></i></div>
+            <h3 class="text-xl font-bold text-tertiary mb-4">评分体系</h3>
+            <ul class="space-y-3 text-neutral-dark/70">
+              <li class="flex items-start"><span class="text-primary font-bold mr-2">难度分</span>动作复杂度和风险系数评分（0-30分）</li>
+              <li class="flex items-start"><span class="text-primary font-bold mr-2">完成分</span>动作完成质量和稳定性评分（0-30分）</li>
+              <li class="flex items-start"><span class="text-primary font-bold mr-2">艺术分</span>表演创意和艺术表现力评分（0-20分）</li>
+              <li class="flex items-start"><span class="text-primary font-bold mr-2">编排分</span>动作衔接和整体编排合理性（0-20分）</li>
+            </ul>
+          </div>
+          <div class="bg-white rounded-xl shadow-lg p-8 border-t-4 border-secondary">
+            <div class="w-14 h-14 bg-secondary/10 rounded-full flex items-center justify-center mb-4"><i class="fa fa-list-ol text-secondary text-xl"></i></div>
+            <h3 class="text-xl font-bold text-tertiary mb-4">竞赛项目分类</h3>
+            <ul class="space-y-3 text-neutral-dark/70">
+              <li class="flex items-start"><span class="text-secondary font-bold mr-2">个人技巧赛</span>单人完成规定套路与自选动作</li>
+              <li class="flex items-start"><span class="text-secondary font-bold mr-2">双人配合赛</span>两人协作完成抛接和配合动作</li>
+              <li class="flex items-start"><span class="text-secondary font-bold mr-2">团体表演赛</span>3-10人团队配合的表演编排</li>
+              <li class="flex items-start"><span class="text-secondary font-bold mr-2">创意编排赛</span>不限形式的创新性空竹表演</li>
+            </ul>
+          </div>
+          <div class="bg-white rounded-xl shadow-lg p-8 border-t-4 border-tertiary">
+            <div class="w-14 h-14 bg-tertiary/10 rounded-full flex items-center justify-center mb-4"><i class="fa fa-users text-tertiary text-xl"></i></div>
+            <h3 class="text-xl font-bold text-tertiary mb-4">组别设置</h3>
+            <ul class="space-y-3 text-neutral-dark/70">
+              <li class="flex items-start"><span class="text-tertiary font-bold mr-2">青少年组</span>6-17岁，分儿童组和少年组</li>
+              <li class="flex items-start"><span class="text-tertiary font-bold mr-2">成人组</span>18-54岁，分业余组和专业组</li>
+              <li class="flex items-start"><span class="text-tertiary font-bold mr-2">老年组</span>55岁及以上，侧重康养展示</li>
+              <li class="flex items-start"><span class="text-tertiary font-bold mr-2">混合组</span>不限年龄，团队协作赛制</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="text-3xl font-zcool-xiaowei text-tertiary mb-4 text-center">历届赛事获奖名单</h2>
+        <div class="w-24 h-1 bg-[#805AD5] mx-auto mb-12"></div>
+        <div class="overflow-x-auto">
+          <table class="w-full bg-white rounded-xl shadow-lg overflow-hidden">
+            <thead class="bg-tertiary text-white">
+              <tr>
+                <th class="py-4 px-6 text-left">赛事名称</th>
+                <th class="py-4 px-6 text-left">组别/项目</th>
+                <th class="py-4 px-6 text-left">获奖者</th>
+                <th class="py-4 px-6 text-center">奖项</th>
+                <th class="py-4 px-6 text-center">年份</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-neutral">
+              <tr class="hover:bg-neutral/50 transition-colors duration-200">
+                <td class="py-4 px-6 font-medium text-tertiary">全国空竹锦标赛</td>
+                <td class="py-4 px-6">成人专业组·个人技巧</td>
+                <td class="py-4 px-6">张国良</td>
+                <td class="py-4 px-6 text-center"><span class="bg-primary text-white text-xs px-3 py-1 rounded-full">金奖</span></td>
+                <td class="py-4 px-6 text-center">2024</td>
+              </tr>
+              <tr class="hover:bg-neutral/50 transition-colors duration-200">
+                <td class="py-4 px-6 font-medium text-tertiary">亚洲空竹锦标赛</td>
+                <td class="py-4 px-6">青少年组·个人技巧</td>
+                <td class="py-4 px-6">陈晓明</td>
+                <td class="py-4 px-6 text-center"><span class="bg-primary text-white text-xs px-3 py-1 rounded-full">金奖</span></td>
+                <td class="py-4 px-6 text-center">2024</td>
+              </tr>
+              <tr class="hover:bg-neutral/50 transition-colors duration-200">
+                <td class="py-4 px-6 font-medium text-tertiary">全国空竹锦标赛</td>
+                <td class="py-4 px-6">成人业余组·团体表演</td>
+                <td class="py-4 px-6">北京市空竹运动协会代表队</td>
+                <td class="py-4 px-6 text-center"><span class="bg-secondary text-white text-xs px-3 py-1 rounded-full">银奖</span></td>
+                <td class="py-4 px-6 text-center">2024</td>
+              </tr>
+              <tr class="hover:bg-neutral/50 transition-colors duration-200">
+                <td class="py-4 px-6 font-medium text-tertiary">国际空竹文化节</td>
+                <td class="py-4 px-6">创意编排赛</td>
+                <td class="py-4 px-6">孙光辉</td>
+                <td class="py-4 px-6 text-center"><span class="bg-primary text-white text-xs px-3 py-1 rounded-full">金奖</span></td>
+                <td class="py-4 px-6 text-center">2023</td>
+              </tr>
+              <tr class="hover:bg-neutral/50 transition-colors duration-200">
+                <td class="py-4 px-6 font-medium text-tertiary">山东省空竹技艺交流大赛</td>
+                <td class="py-4 px-6">青少年组·个人技巧</td>
+                <td class="py-4 px-6">烟台南山学院代表队</td>
+                <td class="py-4 px-6 text-center"><span class="bg-primary text-white text-xs px-3 py-1 rounded-full">金奖</span></td>
+                <td class="py-4 px-6 text-center">2023</td>
+              </tr>
+              <tr class="hover:bg-neutral/50 transition-colors duration-200">
+                <td class="py-4 px-6 font-medium text-tertiary">亚洲空竹锦标赛</td>
+                <td class="py-4 px-6">成人专业组·双人配合</td>
+                <td class="py-4 px-6">李连元、张凤兰</td>
+                <td class="py-4 px-6 text-center"><span class="bg-secondary text-white text-xs px-3 py-1 rounded-full">银奖</span></td>
+                <td class="py-4 px-6 text-center">2023</td>
+              </tr>
+              <tr class="hover:bg-neutral/50 transition-colors duration-200">
+                <td class="py-4 px-6 font-medium text-tertiary">国际空竹文化节</td>
+                <td class="py-4 px-6">老年组·康养展示</td>
+                <td class="py-4 px-6">北京市空竹协会老年队</td>
+                <td class="py-4 px-6 text-center"><span class="bg-primary text-white text-xs px-3 py-1 rounded-full">金奖</span></td>
+                <td class="py-4 px-6 text-center">2022</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="text-center mt-16">
+        <a href="index.html" class="inline-block bg-tertiary hover:bg-tertiary/90 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 mr-4">
+          <i class="fa fa-home mr-2"></i>返回首页
+        </a>
+        <a href="products.html" class="inline-block bg-primary hover:bg-primary/90 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300">
+          文创产品 <i class="fa fa-angle-right ml-2"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-neutral-dark text-white pt-16 pb-8">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div>
+          <h3 class="text-xl font-bold mb-4">关于我们</h3>
+          <p class="text-neutral/70 mb-4">中国空竹数据库系统致力于收集、整理和传播空竹非遗文化，促进空竹技艺的传承与发展。由烟台南山学院"抖趣竹风"大学生创新创业团队开发。</p>
+          <div class="flex space-x-4"><a href="#" class="text-neutral hover:text-white transition-colors duration-300"><i class="fa fa-weibo text-xl"></i></a><a href="#" class="text-neutral hover:text-white transition-colors duration-300"><i class="fa fa-wechat text-xl"></i></a><a href="#" class="text-neutral hover:text-white transition-colors duration-300"><i class="fa fa-youtube-play text-xl"></i></a><a href="#" class="text-neutral hover:text-white transition-colors duration-300"><i class="fa fa-instagram text-xl"></i></a></div>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-4">快速链接</h3>
+          <ul class="space-y-2"><li><a href="index.html" class="text-neutral hover:text-white transition-colors duration-300">首页</a></li><li><a href="policy.html" class="text-neutral hover:text-white transition-colors duration-300">政策知识</a></li><li><a href="heritage.html" class="text-neutral hover:text-white transition-colors duration-300">传承人物</a></li><li><a href="activities.html" class="text-neutral hover:text-white transition-colors duration-300">活动新闻</a></li><li><a href="courses.html" class="text-neutral hover:text-white transition-colors duration-300">学习课程</a></li><li><a href="competition.html" class="text-neutral hover:text-white transition-colors duration-300">竞赛信息</a></li><li><a href="products.html" class="text-neutral hover:text-white transition-colors duration-300">文创产品</a></li></ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-4">联系我们</h3>
+          <ul class="space-y-2"><li class="flex items-start"><i class="fa fa-map-marker mt-1 mr-3 text-primary"></i><span class="text-neutral/70">山东省烟台市龙口市烟台南山学院</span></li><li class="flex items-center"><i class="fa fa-phone mr-3 text-primary"></i><span class="text-neutral/70">0535-1234567</span></li><li class="flex items-center"><i class="fa fa-envelope mr-3 text-primary"></i><span class="text-neutral/70">douquzhufeng@example.com</span></li></ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-4">合作伙伴</h3>
+          <div class="grid grid-cols-2 gap-4"><div class="bg-neutral-dark/50 rounded-lg p-3 flex items-center justify-center h-16"><span class="text-neutral/70 text-sm">中国非遗保护中心</span></div><div class="bg-neutral-dark/50 rounded-lg p-3 flex items-center justify-center h-16"><span class="text-neutral/70 text-sm">烟台南山学院</span></div><div class="bg-neutral-dark/50 rounded-lg p-3 flex items-center justify-center h-16"><span class="text-neutral/70 text-sm">全国空竹协会</span></div><div class="bg-neutral-dark/50 rounded-lg p-3 flex items-center justify-center h-16"><span class="text-neutral/70 text-sm">非遗文化基金会</span></div></div>
+        </div>
+      </div>
+      <div class="border-t border-neutral/20 pt-8"><div class="flex flex-col md:flex-row justify-between items-center"><p class="text-neutral/60 text-sm mb-4 md:mb-0">&copy; 2025 中国空竹数据库系统. 保留所有权利.</p><div class="flex space-x-4"><a href="#" class="text-neutral/60 hover:text-white text-sm transition-colors duration-300">隐私政策</a><a href="#" class="text-neutral/60 hover:text-white text-sm transition-colors duration-300">使用条款</a><a href="#" class="text-neutral/60 hover:text-white text-sm transition-colors duration-300">网站地图</a></div></div></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('menu-toggle').addEventListener('click', function() {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+    const ctx = document.getElementById('competitionChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['2021', '2022', '2023', '2024', '2025'],
+        datasets: [{
+          label: '金牌', data: [5, 7, 9, 10, 12],
+          backgroundColor: '#C53030', borderRadius: 6
+        }, {
+          label: '银牌', data: [8, 10, 12, 15, 18],
+          backgroundColor: '#D69E2E', borderRadius: 6
+        }, {
+          label: '铜牌', data: [12, 15, 18, 20, 22],
+          backgroundColor: '#1A365D', borderRadius: 6
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { position: 'top' } },
+        scales: {
+          y: { beginAtZero: true, grid: { display: true, color: 'rgba(0, 0, 0, 0.05)' } },
+          x: { grid: { display: false } }
+        }
+      }
+    });
+  </script>
+
+</body></html>

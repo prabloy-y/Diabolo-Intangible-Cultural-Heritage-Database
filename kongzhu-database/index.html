@@ -1,0 +1,284 @@
+<html lang="zh-CN"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>中国空竹数据库系统 - 首页</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#C53030',
+            secondary: '#D69E2E',
+            tertiary: '#1A365D',
+            neutral: '#F7FAFC',
+            'neutral-dark': '#2D3748',
+          },
+          fontFamily: {
+            'zcool-xiaowei': ['"ZCOOL XiaoWei"', 'serif'],
+            'zcool-qingke': ['"ZCOOL QingKe HuangYou"', 'sans-serif'],
+          },
+        },
+      }
+    }
+  </script>
+
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto { content-visibility: auto; }
+      .text-shadow { text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); }
+      .text-shadow-lg { text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7); }
+      .animate-float { animation: float 3s ease-in-out infinite; }
+      .animate-spin-slow { animation: spin 15s linear infinite; }
+      .bg-blur { backdrop-filter: blur(8px); }
+      .mask-gradient {
+        mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+        -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+      }
+    }
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+  </style>
+</head>
+<body class="font-sans bg-neutral text-neutral-dark">
+
+  <!-- ==================== 导航栏 ==================== -->
+  <header id="navbar" class="fixed w-full top-0 z-50 bg-primary/90 text-white shadow-lg">
+    <nav>
+      <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+        <div class="flex items-center">
+          <div class="w-12 h-12 mr-3 relative">
+            <div class="absolute inset-0 animate-spin-slow">
+              <i class="fa fa-circle-o-notch text-secondary text-3xl"></i>
+            </div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <i class="fa fa-circle text-primary text-2xl"></i>
+            </div>
+          </div>
+          <a href="index.html" class="text-2xl font-zcool-qingke tracking-wider">中国空竹数据库</a>
+        </div>
+        <div class="hidden md:flex space-x-8">
+          <a href="index.html" class="text-secondary font-bold transition-colors duration-300">首页</a>
+          <a href="policy.html" class="hover:text-secondary transition-colors duration-300">政策知识</a>
+          <a href="heritage.html" class="hover:text-secondary transition-colors duration-300">传承人物</a>
+          <a href="activities.html" class="hover:text-secondary transition-colors duration-300">活动新闻</a>
+          <a href="courses.html" class="hover:text-secondary transition-colors duration-300">学习课程</a>
+          <a href="competition.html" class="hover:text-secondary transition-colors duration-300">竞赛信息</a>
+          <a href="products.html" class="hover:text-secondary transition-colors duration-300">文创产品</a>
+        </div>
+        <button id="menu-toggle" class="md:hidden text-white text-2xl focus:outline-none">
+          <i class="fa fa-bars"></i>
+        </button>
+      </div>
+      <div id="mobile-menu" class="md:hidden hidden bg-primary/95 py-4 px-4 shadow-lg">
+        <div class="flex flex-col space-y-4">
+          <a href="index.html" class="text-secondary font-bold py-2">首页</a>
+          <a href="policy.html" class="hover:text-secondary transition-colors duration-300 py-2">政策知识</a>
+          <a href="heritage.html" class="hover:text-secondary transition-colors duration-300 py-2">传承人物</a>
+          <a href="activities.html" class="hover:text-secondary transition-colors duration-300 py-2">活动新闻</a>
+          <a href="courses.html" class="hover:text-secondary transition-colors duration-300 py-2">学习课程</a>
+          <a href="competition.html" class="hover:text-secondary transition-colors duration-300 py-2">竞赛信息</a>
+          <a href="products.html" class="hover:text-secondary transition-colors duration-300 py-2">文创产品</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ==================== 英雄区域 ==================== -->
+  <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <div class="absolute inset-0 bg-black/50 z-10"></div>
+      <video autoplay="" muted="" loop="" class="w-full h-full object-cover mask-gradient">
+        <source src="https://assets.mixkit.co/videos/preview/mixkit-young-man-playing-with-a-diabolo-47338-large.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="container mx-auto px-4 py-20 relative z-20 text-center">
+      <h1 class="text-[clamp(2.5rem,6vw,5rem)] font-zcool-qingke text-white text-shadow-lg mb-6 tracking-wider">
+        中国空竹<br>非遗数据库
+      </h1>
+      <p class="text-[clamp(1rem,3vw,1.5rem)] text-white text-shadow max-w-3xl mx-auto mb-4">
+        探索千年非遗文化，传承中华空竹技艺
+      </p>
+      <p class="text-white/70 max-w-2xl mx-auto mb-10 text-sm md:text-base">
+        聚焦国家级抖空竹非遗技艺，通过"数字化记录 + 体验式传播 + 商业化转化"三位一体模式，让濒临失传的抖空竹非遗走进年轻一代生活
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="policy.html" class="bg-primary hover:bg-primary/90 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300">
+          了解政策
+        </a>
+        <a href="courses.html" class="bg-secondary hover:bg-secondary/90 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300">
+          学习空竹
+        </a>
+      </div>
+      <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <a href="#features" class="text-white text-4xl opacity-80 hover:opacity-100 transition-opacity duration-300">
+          <i class="fa fa-angle-down"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 功能导航概览 ==================== -->
+  <section id="features" class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-[clamp(1.8rem,4vw,3rem)] font-zcool-xiaowei text-tertiary mb-4">数据库功能导航</h2>
+        <div class="w-24 h-1 bg-primary mx-auto mb-6"></div>
+        <p class="text-lg text-neutral-dark/80 max-w-3xl mx-auto">中国空竹非遗数据库涵盖六大核心模块，全面记录和展示空竹非遗文化</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <a href="policy.html" class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300 border-t-4 border-primary">
+          <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+            <i class="fa fa-balance-scale text-primary text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-tertiary mb-3">政策知识</h3>
+          <p class="text-neutral-dark/70">国家级非遗保护政策法规、地方空竹文化发展计划、非遗法解读与学术研究成果，为空竹传承提供政策指引。</p>
+        </a>
+        <a href="heritage.html" class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300 border-t-4 border-secondary">
+          <div class="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mb-4">
+            <i class="fa fa-user-circle-o text-secondary text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-tertiary mb-3">传承人物</h3>
+          <p class="text-neutral-dark/70">收录国家级、省级、市级抖空竹代表性传承人档案，涵盖传承谱系、技艺特点、教学成果与获奖荣誉。</p>
+        </a>
+        <a href="activities.html" class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300 border-t-4 border-tertiary">
+          <div class="w-16 h-16 bg-tertiary/10 rounded-full flex items-center justify-center mb-4">
+            <i class="fa fa-newspaper-o text-tertiary text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-tertiary mb-3">活动新闻</h3>
+          <p class="text-neutral-dark/70">实时更新国内外空竹非遗相关文化活动、赛事新闻、学术交流、校园美育与公益支教等最新动态。</p>
+        </a>
+        <a href="courses.html" class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300 border-t-4 border-[#38A169]">
+          <div class="w-16 h-16 bg-[#38A169]/10 rounded-full flex items-center justify-center mb-4">
+            <i class="fa fa-graduation-cap text-[#38A169] text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-tertiary mb-3">学习课程</h3>
+          <p class="text-neutral-dark/70">提供全年龄段阶梯式空竹教学课程，包括零基础入门、中级进阶、高级表演及扬竹康养十式专项课程。</p>
+        </a>
+        <a href="competition.html" class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300 border-t-4 border-[#805AD5]">
+          <div class="w-16 h-16 bg-[#805AD5]/10 rounded-full flex items-center justify-center mb-4">
+            <i class="fa fa-trophy text-[#805AD5] text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-tertiary mb-3">竞赛信息</h3>
+          <p class="text-neutral-dark/70">汇集全国空竹锦标赛、国际空竹赛事、地方艺术节等竞赛日历、报名指南、获奖数据统计与赛事规则。</p>
+        </a>
+        <a href="products.html" class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300 border-t-4 border-[#DD6B20]">
+          <div class="w-16 h-16 bg-[#DD6B20]/10 rounded-full flex items-center justify-center mb-4">
+            <i class="fa fa-shopping-bag text-[#DD6B20] text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-tertiary mb-3">文创产品</h3>
+          <p class="text-neutral-dark/70">展示空竹国潮文创产品、传统工艺空竹套装、非遗衍生品及教学图书，推动空竹文化产业化发展。</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 数据统计区域 ==================== -->
+  <section class="py-20 bg-tertiary text-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-[clamp(1.8rem,4vw,3rem)] font-zcool-xiaowei mb-4">数据库运行数据</h2>
+        <div class="w-24 h-1 bg-secondary mx-auto mb-6"></div>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div class="p-6">
+          <div class="text-5xl font-bold text-secondary mb-2">32</div>
+          <div class="text-white/80">收录传承人</div>
+        </div>
+        <div class="p-6">
+          <div class="text-5xl font-bold text-secondary mb-2">156</div>
+          <div class="text-white/80">政策文献条目</div>
+        </div>
+        <div class="p-6">
+          <div class="text-5xl font-bold text-secondary mb-2">48</div>
+          <div class="text-white/80">教学课程</div>
+        </div>
+        <div class="p-6">
+          <div class="text-5xl font-bold text-secondary mb-2">260+</div>
+          <div class="text-white/80">活动新闻记录</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 页脚 ==================== -->
+  <footer class="bg-neutral-dark text-white pt-16 pb-8">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div>
+          <h3 class="text-xl font-bold mb-4">关于我们</h3>
+          <p class="text-neutral/70 mb-4">中国空竹数据库系统致力于收集、整理和传播空竹非遗文化，促进空竹技艺的传承与发展。由烟台南山学院"抖趣竹风"大学生创新创业团队开发。</p>
+          <div class="flex space-x-4">
+            <a href="#" class="text-neutral hover:text-white transition-colors duration-300"><i class="fa fa-weibo text-xl"></i></a>
+            <a href="#" class="text-neutral hover:text-white transition-colors duration-300"><i class="fa fa-wechat text-xl"></i></a>
+            <a href="#" class="text-neutral hover:text-white transition-colors duration-300"><i class="fa fa-youtube-play text-xl"></i></a>
+            <a href="#" class="text-neutral hover:text-white transition-colors duration-300"><i class="fa fa-instagram text-xl"></i></a>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-4">快速链接</h3>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="text-neutral hover:text-white transition-colors duration-300">首页</a></li>
+            <li><a href="policy.html" class="text-neutral hover:text-white transition-colors duration-300">政策知识</a></li>
+            <li><a href="heritage.html" class="text-neutral hover:text-white transition-colors duration-300">传承人物</a></li>
+            <li><a href="activities.html" class="text-neutral hover:text-white transition-colors duration-300">活动新闻</a></li>
+            <li><a href="courses.html" class="text-neutral hover:text-white transition-colors duration-300">学习课程</a></li>
+            <li><a href="competition.html" class="text-neutral hover:text-white transition-colors duration-300">竞赛信息</a></li>
+            <li><a href="products.html" class="text-neutral hover:text-white transition-colors duration-300">文创产品</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-4">联系我们</h3>
+          <ul class="space-y-2">
+            <li class="flex items-start">
+              <i class="fa fa-map-marker mt-1 mr-3 text-primary"></i>
+              <span class="text-neutral/70">山东省烟台市龙口市烟台南山学院</span>
+            </li>
+            <li class="flex items-center">
+              <i class="fa fa-phone mr-3 text-primary"></i>
+              <span class="text-neutral/70">0535-1234567</span>
+            </li>
+            <li class="flex items-center">
+              <i class="fa fa-envelope mr-3 text-primary"></i>
+              <span class="text-neutral/70">douquzhufeng@example.com</span>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-4">合作伙伴</h3>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="bg-neutral-dark/50 rounded-lg p-3 flex items-center justify-center h-16"><span class="text-neutral/70 text-sm">中国非遗保护中心</span></div>
+            <div class="bg-neutral-dark/50 rounded-lg p-3 flex items-center justify-center h-16"><span class="text-neutral/70 text-sm">烟台南山学院</span></div>
+            <div class="bg-neutral-dark/50 rounded-lg p-3 flex items-center justify-center h-16"><span class="text-neutral/70 text-sm">全国空竹协会</span></div>
+            <div class="bg-neutral-dark/50 rounded-lg p-3 flex items-center justify-center h-16"><span class="text-neutral/70 text-sm">非遗文化基金会</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-neutral/20 pt-8">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <p class="text-neutral/60 text-sm mb-4 md:mb-0">&copy; 2025 中国空竹数据库系统. 保留所有权利.</p>
+          <div class="flex space-x-4">
+            <a href="#" class="text-neutral/60 hover:text-white text-sm transition-colors duration-300">隐私政策</a>
+            <a href="#" class="text-neutral/60 hover:text-white text-sm transition-colors duration-300">使用条款</a>
+            <a href="#" class="text-neutral/60 hover:text-white text-sm transition-colors duration-300">网站地图</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('menu-toggle').addEventListener('click', function() {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+  </script>
+
+</body></html>

@@ -1,0 +1,302 @@
+<html lang="zh-CN"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>空竹学习课程 - 中国空竹数据库系统</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#C53030',
+            secondary: '#D69E2E',
+            tertiary: '#1A365D',
+            neutral: '#F7FAFC',
+            'neutral-dark': '#2D3748',
+          },
+          fontFamily: {
+            'zcool-xiaowei': ['"ZCOOL XiaoWei"', 'serif'],
+            'zcool-qingke': ['"ZCOOL QingKe HuangYou"', 'sans-serif'],
+          },
+        },
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto { content-visibility: auto; }
+      .text-shadow { text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); }
+      .text-shadow-lg { text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7); }
+      .animate-float { animation: float 3s ease-in-out infinite; }
+      .animate-spin-slow { animation: spin 15s linear infinite; }
+      .bg-blur { backdrop-filter: blur(8px); }
+    }
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+  </style>
+</head>
+<body class="font-sans bg-neutral text-neutral-dark">
+
+  <header id="navbar" class="fixed w-full top-0 z-50 bg-primary/90 text-white shadow-lg">
+    <nav>
+      <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+        <div class="flex items-center">
+          <div class="w-12 h-12 mr-3 relative">
+            <div class="absolute inset-0 animate-spin-slow">
+              <i class="fa fa-circle-o-notch text-secondary text-3xl"></i>
+            </div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <i class="fa fa-circle text-primary text-2xl"></i>
+            </div>
+          </div>
+          <a href="index.html" class="text-2xl font-zcool-qingke tracking-wider">中国空竹数据库</a>
+        </div>
+        <div class="hidden md:flex space-x-8">
+          <a href="index.html" class="hover:text-secondary transition-colors duration-300">首页</a>
+          <a href="policy.html" class="hover:text-secondary transition-colors duration-300">政策知识</a>
+          <a href="heritage.html" class="hover:text-secondary transition-colors duration-300">传承人物</a>
+          <a href="activities.html" class="hover:text-secondary transition-colors duration-300">活动新闻</a>
+          <a href="courses.html" class="text-secondary font-bold transition-colors duration-300">学习课程</a>
+          <a href="competition.html" class="hover:text-secondary transition-colors duration-300">竞赛信息</a>
+          <a href="products.html" class="hover:text-secondary transition-colors duration-300">文创产品</a>
+        </div>
+        <button id="menu-toggle" class="md:hidden text-white text-2xl focus:outline-none"><i class="fa fa-bars"></i></button>
+      </div>
+      <div id="mobile-menu" class="md:hidden hidden bg-primary/95 py-4 px-4 shadow-lg">
+        <div class="flex flex-col space-y-4">
+          <a href="index.html" class="hover:text-secondary transition-colors duration-300 py-2">首页</a>
+          <a href="policy.html" class="hover:text-secondary transition-colors duration-300 py-2">政策知识</a>
+          <a href="heritage.html" class="hover:text-secondary transition-colors duration-300 py-2">传承人物</a>
+          <a href="activities.html" class="hover:text-secondary transition-colors duration-300 py-2">活动新闻</a>
+          <a href="courses.html" class="text-secondary font-bold py-2">学习课程</a>
+          <a href="competition.html" class="hover:text-secondary transition-colors duration-300 py-2">竞赛信息</a>
+          <a href="products.html" class="hover:text-secondary transition-colors duration-300 py-2">文创产品</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <section class="relative pt-28 pb-16 bg-tertiary text-white">
+    <div class="container mx-auto px-4 text-center">
+      <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-zcool-xiaowei mb-4">空竹学习课程</h1>
+      <div class="w-24 h-1 bg-secondary mx-auto mb-6"></div>
+      <p class="text-lg text-white/80 max-w-3xl mx-auto">从入门到精通，全年龄段阶梯式课程体系，专业空竹教练带你掌握空竹技艺</p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+
+      <div class="mb-20">
+        <h2 class="text-3xl font-zcool-xiaowei text-tertiary mb-4 text-center">精品课程推荐</h2>
+        <div class="w-24 h-1 bg-primary mx-auto mb-12"></div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-white rounded-xl shadow-lg overflow-hidden group">
+            <div class="relative">
+              <div class="aspect-video overflow-hidden"><img src="https://picsum.photos/600/400?random=13" alt="空竹入门课程" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"></div>
+              <div class="absolute top-4 left-4 bg-primary text-white text-sm font-bold px-3 py-1 rounded-full">入门课程</div>
+              <div class="absolute top-4 right-4 bg-tertiary text-white text-sm font-bold px-3 py-1 rounded-full flex items-center"><i class="fa fa-play-circle mr-1"></i>12集</div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-tertiary mb-2">空竹零基础入门教程</h3>
+              <div class="flex items-center text-sm text-neutral-dark/60 mb-3"><div class="flex items-center mr-4"><i class="fa fa-user mr-1"></i><span>张明教练</span></div><div class="flex items-center"><i class="fa fa-star text-yellow-400 mr-1"></i><span>4.9 (128人评价)</span></div></div>
+              <p class="text-neutral-dark/70 mb-4 leading-relaxed">适合完全零基础的初学者，从空竹的基本结构、握法、启动方法开始教学，循序渐进地教授基本抛接、转身等动作。课程涵盖空竹安全须知、器材选择、基础绳技、匀加速原理、正反方向发力技巧等内容，让你快速掌握空竹入门技巧。每课15-20分钟，配有课后练习指导。</p>
+              <div class="flex justify-between items-center">
+                <div class="text-primary font-bold text-xl">免费</div>
+                <a href="#" class="inline-block bg-tertiary hover:bg-tertiary/90 text-white font-bold py-2 px-5 rounded-full shadow transform hover:scale-105 transition-all duration-300">立即学习</a>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl shadow-lg overflow-hidden group">
+            <div class="relative">
+              <div class="aspect-video overflow-hidden"><img src="https://picsum.photos/600/400?random=14" alt="空竹中级课程" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"></div>
+              <div class="absolute top-4 left-4 bg-secondary text-white text-sm font-bold px-3 py-1 rounded-full">中级课程</div>
+              <div class="absolute top-4 right-4 bg-tertiary text-white text-sm font-bold px-3 py-1 rounded-full flex items-center"><i class="fa fa-play-circle mr-1"></i>18集</div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-tertiary mb-2">空竹中级技巧提升</h3>
+              <div class="flex items-center text-sm text-neutral-dark/60 mb-3"><div class="flex items-center mr-4"><i class="fa fa-user mr-1"></i><span>李华教练</span></div><div class="flex items-center"><i class="fa fa-star text-yellow-400 mr-1"></i><span>4.8 (96人评价)</span></div></div>
+              <p class="text-neutral-dark/70 mb-4 leading-relaxed">在入门基础上教授更复杂的空竹技巧，包括高抛、缠绕、跳跃、过桥、背穿等动作，提高空竹操控的稳定性和流畅性。系统讲解空竹转速与稳定性的关系、复杂花式动作的力学原理，引入双轮空竹基本操作，适合有一定基础（能独立完成平稳抖动的爱好者进一步提升。</p>
+              <div class="flex justify-between items-center">
+                <div class="text-primary font-bold text-xl">¥99</div>
+                <a href="#" class="inline-block bg-tertiary hover:bg-tertiary/90 text-white font-bold py-2 px-5 rounded-full shadow transform hover:scale-105 transition-all duration-300">立即学习</a>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl shadow-lg overflow-hidden group">
+            <div class="relative">
+              <div class="aspect-video overflow-hidden"><img src="https://picsum.photos/600/400?random=15" alt="空竹高级表演课程" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"></div>
+              <div class="absolute top-4 left-4 bg-primary text-white text-sm font-bold px-3 py-1 rounded-full">高级课程</div>
+              <div class="absolute top-4 right-4 bg-tertiary text-white text-sm font-bold px-3 py-1 rounded-full flex items-center"><i class="fa fa-play-circle mr-1"></i>24集</div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-tertiary mb-2">空竹高级表演编排</h3>
+              <div class="flex items-center text-sm text-neutral-dark/60 mb-3"><div class="flex items-center mr-4"><i class="fa fa-user mr-1"></i><span>王芳教练</span></div><div class="flex items-center"><i class="fa fa-star text-yellow-400 mr-1"></i><span>4.9 (72人评价)</span></div></div>
+              <p class="text-neutral-dark/70 mb-4 leading-relaxed">教授高难度空竹技巧和表演编排，包括空中抛接、多人配合、音乐编排、舞台走位、灯光配合等内容，帮助学员打造专业级空竹表演节目。课程包含完整表演套路教学、赛事评分标准解读、表演心理素质训练，适合有丰富经验的空竹爱好者向专业化发展。</p>
+              <div class="flex justify-between items-center">
+                <div class="text-primary font-bold text-xl">¥199</div>
+                <a href="#" class="inline-block bg-tertiary hover:bg-tertiary/90 text-white font-bold py-2 px-5 rounded-full shadow transform hover:scale-105 transition-all duration-300">立即学习</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-20">
+        <h2 class="text-3xl font-zcool-xiaowei text-tertiary mb-4 text-center">全年龄段课程体系</h2>
+        <div class="w-24 h-1 bg-secondary mx-auto mb-12"></div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="bg-neutral rounded-xl p-6 hover:shadow-lg transition-shadow duration-300 border-t-4 border-[#38A169]">
+            <h3 class="text-xl font-bold text-tertiary mb-3">少儿启蒙课程</h3>
+            <p class="text-sm text-neutral-dark/60 mb-3">适用年龄：6-12岁</p>
+            <p class="text-neutral-dark/70 text-sm mb-4">以趣味游戏化方式引导儿童认识空竹，培养手眼协调能力和专注力，包含空竹故事、基础动作、安全知识等12课时内容。</p>
+            <div class="flex flex-wrap gap-2"><span class="bg-[#38A169]/10 text-[#38A169] text-xs px-2 py-1 rounded-full">趣味教学</span><span class="bg-[#38A169]/10 text-[#38A169] text-xs px-2 py-1 rounded-full">12课时</span></div>
+          </div>
+          <div class="bg-neutral rounded-xl p-6 hover:shadow-lg transition-shadow duration-300 border-t-4 border-primary">
+            <h3 class="text-xl font-bold text-tertiary mb-3">青少年系统课程</h3>
+            <p class="text-sm text-neutral-dark/60 mb-3">适用年龄：13-18岁</p>
+            <p class="text-neutral-dark/70 text-sm mb-4">系统学习空竹技法，从入门到高级循序渐进，融入体育中考体能训练内容，增强身体素质和团队协作能力，共48课时。</p>
+            <div class="flex flex-wrap gap-2"><span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded-full">系统教学</span><span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded-full">48课时</span></div>
+          </div>
+          <div class="bg-neutral rounded-xl p-6 hover:shadow-lg transition-shadow duration-300 border-t-4 border-secondary">
+            <h3 class="text-xl font-bold text-tertiary mb-3">成人技能课程</h3>
+            <p class="text-sm text-neutral-dark/60 mb-3">适用年龄：19-55岁</p>
+            <p class="text-neutral-dark/70 text-sm mb-4">针对成人学习特点设计的空竹技能培训课程，包括基础班、提高班和竞技班三个层级，提供一对一陪练教学服务，灵活排课。</p>
+            <div class="flex flex-wrap gap-2"><span class="bg-secondary/10 text-secondary text-xs px-2 py-1 rounded-full">灵活排课</span><span class="bg-secondary/10 text-secondary text-xs px-2 py-1 rounded-full">一对一陪练</span></div>
+          </div>
+          <div class="bg-neutral rounded-xl p-6 hover:shadow-lg transition-shadow duration-300 border-t-4 border-tertiary">
+            <h3 class="text-xl font-bold text-tertiary mb-3">中老年康养课程</h3>
+            <p class="text-sm text-neutral-dark/60 mb-3">适用年龄：55岁以上</p>
+            <p class="text-neutral-dark/70 text-sm mb-4">自主研发"扬竹康养十式"专项课程，以低强度空竹运动结合中医养生理念，改善肩颈腰椎问题，提升身体协调性和平衡能力。</p>
+            <div class="flex flex-wrap gap-2"><span class="bg-tertiary/10 text-tertiary text-xs px-2 py-1 rounded-full">康养特色</span><span class="bg-tertiary/10 text-tertiary text-xs px-2 py-1 rounded-full">中医融合</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-20">
+        <h2 class="text-3xl font-zcool-xiaowei text-tertiary mb-4 text-center">扬竹康养十式专项课程</h2>
+        <div class="w-24 h-1 bg-tertiary mx-auto mb-12"></div>
+        <div class="bg-neutral rounded-2xl p-8">
+          <p class="text-neutral-dark/70 leading-relaxed mb-8 text-center max-w-3xl mx-auto">"扬竹康养十式"是本团队自主研发的空竹康养课程体系，融合传统抖空竹技艺与现代运动康复理念，针对中老年群体常见的亚健康问题设计十组标准动作，每式对应特定身体部位的锻炼功效。</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+            <div class="bg-white rounded-xl p-4 text-center hover:shadow-md transition-shadow duration-300">
+              <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3"><span class="text-primary font-bold">一</span></div>
+              <h4 class="font-bold text-tertiary mb-1">竹起云台</h4>
+              <p class="text-neutral-dark/60 text-xs">激活肩部肌肉群，改善肩周血液循环，缓解肩颈僵硬</p>
+            </div>
+            <div class="bg-white rounded-xl p-4 text-center hover:shadow-md transition-shadow duration-300">
+              <div class="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-3"><span class="text-secondary font-bold">二</span></div>
+              <h4 class="font-bold text-tertiary mb-1">竹舞清风</h4>
+              <p class="text-neutral-dark/60 text-xs">锻炼腕关节灵活性，增强上肢协调性，预防腕管综合征</p>
+            </div>
+            <div class="bg-white rounded-xl p-4 text-center hover:shadow-md transition-shadow duration-300">
+              <div class="w-12 h-12 bg-tertiary/10 rounded-full flex items-center justify-center mx-auto mb-3"><span class="text-tertiary font-bold">三</span></div>
+              <h4 class="font-bold text-tertiary mb-1">竹转乾坤</h4>
+              <p class="text-neutral-dark/60 text-xs">强化腰腹核心力量，改善腰椎活动度，预防腰肌劳损</p>
+            </div>
+            <div class="bg-white rounded-xl p-4 text-center hover:shadow-md transition-shadow duration-300">
+              <div class="w-12 h-12 bg-[#38A169]/10 rounded-full flex items-center justify-center mx-auto mb-3"><span class="text-[#38A169] font-bold">四</span></div>
+              <h4 class="font-bold text-tertiary mb-1">竹行龙步</h4>
+              <p class="text-neutral-dark/60 text-xs">提升下肢力量与平衡感，锻炼膝关节稳定性，预防跌倒</p>
+            </div>
+            <div class="bg-white rounded-xl p-4 text-center hover:shadow-md transition-shadow duration-300">
+              <div class="w-12 h-12 bg-[#805AD5]/10 rounded-full flex items-center justify-center mx-auto mb-3"><span class="text-[#805AD5] font-bold">五</span></div>
+              <h4 class="font-bold text-tertiary mb-1">竹韵养生</h4>
+              <p class="text-neutral-dark/60 text-xs">配合呼吸吐纳，调节心肺功能，缓解压力，改善睡眠质量</p>
+            </div>
+            <div class="bg-white rounded-xl p-4 text-center hover:shadow-md transition-shadow duration-300">
+              <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3"><span class="text-primary font-bold">六</span></div>
+              <h4 class="font-bold text-tertiary mb-1">竹影飞花</h4>
+              <p class="text-neutral-dark/60 text-xs">训练手眼协调与空间感知能力，延缓认知功能衰退</p>
+            </div>
+            <div class="bg-white rounded-xl p-4 text-center hover:shadow-md transition-shadow duration-300">
+              <div class="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-3"><span class="text-secondary font-bold">七</span></div>
+              <h4 class="font-bold text-tertiary mb-1">竹海听涛</h4>
+              <p class="text-neutral-dark/60 text-xs">静态平衡训练，增强本体感觉，改善体态与脊柱健康</p>
+            </div>
+            <div class="bg-white rounded-xl p-4 text-center hover:shadow-md transition-shadow duration-300">
+              <div class="w-12 h-12 bg-tertiary/10 rounded-full flex items-center justify-center mx-auto mb-3"><span class="text-tertiary font-bold">八</span></div>
+              <h4 class="font-bold text-tertiary mb-1">竹映彩虹</h4>
+              <p class="text-neutral-dark/60 text-xs">双人配合动作，促进社交互动，预防老年孤独与抑郁</p>
+            </div>
+            <div class="bg-white rounded-xl p-4 text-center hover:shadow-md transition-shadow duration-300">
+              <div class="w-12 h-12 bg-[#38A169]/10 rounded-full flex items-center justify-center mx-auto mb-3"><span class="text-[#38A169] font-bold">九</span></div>
+              <h4 class="font-bold text-tertiary mb-1">竹梦悠扬</h4>
+              <p class="text-neutral-dark/60 text-xs">综合协调训练，整合全身肌群协同运动，提升身体综合素质</p>
+            </div>
+            <div class="bg-white rounded-xl p-4 text-center hover:shadow-md transition-shadow duration-300">
+              <div class="w-12 h-12 bg-[#DD6B20]/10 rounded-full flex items-center justify-center mx-auto mb-3"><span class="text-[#DD6B20] font-bold">十</span></div>
+              <h4 class="font-bold text-tertiary mb-1">竹道归真</h4>
+              <p class="text-neutral-dark/60 text-xs">放松收式训练，配合冥想与拉伸，完成整套康养运动的整理恢复</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="text-3xl font-zcool-xiaowei text-tertiary mb-4 text-center">教学特色与学习路径</h2>
+        <div class="w-24 h-1 bg-[#805AD5] mx-auto mb-12"></div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-white rounded-xl shadow-lg p-8">
+            <h3 class="text-xl font-bold text-tertiary mb-4 flex items-center"><i class="fa fa-desktop text-primary text-2xl mr-3"></i>VR/AI智能教学平台</h3>
+            <p class="text-neutral-dark/70 leading-relaxed mb-4">运用虚拟现实技术构建沉浸式空竹学习环境，学员可通过VR设备在虚拟空间中练习空竹动作要领。AI动作识别系统实时分析学员动作，提供即时反馈和纠正建议，大幅提升学习效率。平台内置动作数据库，覆盖200余种空竹标准动作。</p>
+            <div class="flex flex-wrap gap-2"><span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">虚拟现实</span><span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">AI动作识别</span><span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">200+标准动作</span></div>
+          </div>
+          <div class="bg-white rounded-xl shadow-lg p-8">
+            <h3 class="text-xl font-bold text-tertiary mb-4 flex items-center"><i class="fa fa-users text-secondary text-2xl mr-3"></i>一对一陪练教学体系</h3>
+            <p class="text-neutral-dark/70 leading-relaxed mb-4">每位学员配备专属认证教练，根据个人基础和目标制定个性化学习计划。采用"线上指导+线下实践"双轨教学模式，线上通过平台进行动作演示和理论讲解，线下安排面对面实操训练和纠错指导。学习进度全程跟踪记录，定期生成学习报告。</p>
+            <div class="flex flex-wrap gap-2"><span class="bg-secondary/10 text-secondary text-xs px-3 py-1 rounded-full">专属教练</span><span class="bg-secondary/10 text-secondary text-xs px-3 py-1 rounded-full">双轨教学</span><span class="bg-secondary/10 text-secondary text-xs px-3 py-1 rounded-full">进度跟踪</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-16">
+        <a href="index.html" class="inline-block bg-tertiary hover:bg-tertiary/90 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 mr-4">
+          <i class="fa fa-home mr-2"></i>返回首页
+        </a>
+        <a href="competition.html" class="inline-block bg-primary hover:bg-primary/90 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300">
+          竞赛信息 <i class="fa fa-angle-right ml-2"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-neutral-dark text-white pt-16 pb-8">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div>
+          <h3 class="text-xl font-bold mb-4">关于我们</h3>
+          <p class="text-neutral/70 mb-4">中国空竹数据库系统致力于收集、整理和传播空竹非遗文化，促进空竹技艺的传承与发展。由烟台南山学院"抖趣竹风"大学生创新创业团队开发。</p>
+          <div class="flex space-x-4"><a href="#" class="text-neutral hover:text-white transition-colors duration-300"><i class="fa fa-weibo text-xl"></i></a><a href="#" class="text-neutral hover:text-white transition-colors duration-300"><i class="fa fa-wechat text-xl"></i></a><a href="#" class="text-neutral hover:text-white transition-colors duration-300"><i class="fa fa-youtube-play text-xl"></i></a><a href="#" class="text-neutral hover:text-white transition-colors duration-300"><i class="fa fa-instagram text-xl"></i></a></div>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-4">快速链接</h3>
+          <ul class="space-y-2"><li><a href="index.html" class="text-neutral hover:text-white transition-colors duration-300">首页</a></li><li><a href="policy.html" class="text-neutral hover:text-white transition-colors duration-300">政策知识</a></li><li><a href="heritage.html" class="text-neutral hover:text-white transition-colors duration-300">传承人物</a></li><li><a href="activities.html" class="text-neutral hover:text-white transition-colors duration-300">活动新闻</a></li><li><a href="courses.html" class="text-neutral hover:text-white transition-colors duration-300">学习课程</a></li><li><a href="competition.html" class="text-neutral hover:text-white transition-colors duration-300">竞赛信息</a></li><li><a href="products.html" class="text-neutral hover:text-white transition-colors duration-300">文创产品</a></li></ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-4">联系我们</h3>
+          <ul class="space-y-2"><li class="flex items-start"><i class="fa fa-map-marker mt-1 mr-3 text-primary"></i><span class="text-neutral/70">山东省烟台市龙口市烟台南山学院</span></li><li class="flex items-center"><i class="fa fa-phone mr-3 text-primary"></i><span class="text-neutral/70">0535-1234567</span></li><li class="flex items-center"><i class="fa fa-envelope mr-3 text-primary"></i><span class="text-neutral/70">douquzhufeng@example.com</span></li></ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-4">合作伙伴</h3>
+          <div class="grid grid-cols-2 gap-4"><div class="bg-neutral-dark/50 rounded-lg p-3 flex items-center justify-center h-16"><span class="text-neutral/70 text-sm">中国非遗保护中心</span></div><div class="bg-neutral-dark/50 rounded-lg p-3 flex items-center justify-center h-16"><span class="text-neutral/70 text-sm">烟台南山学院</span></div><div class="bg-neutral-dark/50 rounded-lg p-3 flex items-center justify-center h-16"><span class="text-neutral/70 text-sm">全国空竹协会</span></div><div class="bg-neutral-dark/50 rounded-lg p-3 flex items-center justify-center h-16"><span class="text-neutral/70 text-sm">非遗文化基金会</span></div></div>
+        </div>
+      </div>
+      <div class="border-t border-neutral/20 pt-8"><div class="flex flex-col md:flex-row justify-between items-center"><p class="text-neutral/60 text-sm mb-4 md:mb-0">&copy; 2025 中国空竹数据库系统. 保留所有权利.</p><div class="flex space-x-4"><a href="#" class="text-neutral/60 hover:text-white text-sm transition-colors duration-300">隐私政策</a><a href="#" class="text-neutral/60 hover:text-white text-sm transition-colors duration-300">使用条款</a><a href="#" class="text-neutral/60 hover:text-white text-sm transition-colors duration-300">网站地图</a></div></div></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('menu-toggle').addEventListener('click', function() {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+  </script>
+
+</body></html>

@@ -1,0 +1,242 @@
+<html lang="zh-CN"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>空竹历史渊源 - 中国空竹数据库系统</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { primary: '#C53030', secondary: '#D69E2E', tertiary: '#1A365D', neutral: '#F7FAFC', 'neutral-dark': '#2D3748' },
+          fontFamily: { 'zcool-xiaowei': ['"ZCOOL XiaoWei"', 'serif'], 'zcool-qingke': ['"ZCOOL QingKe HuangYou"', 'sans-serif'] },
+        },
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto { content-visibility: auto; }
+      .text-shadow { text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); }
+      .text-shadow-lg { text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7); }
+      .animate-float { animation: float 3s ease-in-out infinite; }
+      .animate-spin-slow { animation: spin 15s linear infinite; }
+    }
+    @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-10px); } 100% { transform: translateY(0px); } }
+  </style>
+</head>
+<body class="font-sans bg-neutral text-neutral-dark">
+
+  <header id="navbar" class="fixed w-full top-0 z-50 bg-primary/90 text-white shadow-lg">
+    <nav>
+      <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+        <div class="flex items-center">
+          <div class="w-12 h-12 mr-3 relative">
+            <div class="absolute inset-0 animate-spin-slow"><i class="fa fa-circle-o-notch text-secondary text-3xl"></i></div>
+            <div class="absolute inset-0 flex items-center justify-center"><i class="fa fa-circle text-primary text-2xl"></i></div>
+          </div>
+          <a href="index.html" class="text-2xl font-zcool-qingke tracking-wider">中国空竹数据库</a>
+        </div>
+        <div class="hidden md:flex space-x-6">
+          <a href="index.html" class="hover:text-secondary transition-colors duration-300">首页</a>
+          <a href="policy.html" class="hover:text-secondary transition-colors duration-300">政策知识</a>
+          <a href="heritage.html" class="hover:text-secondary transition-colors duration-300">传承人物</a>
+          <a href="activities.html" class="hover:text-secondary transition-colors duration-300">活动新闻</a>
+          <a href="courses.html" class="hover:text-secondary transition-colors duration-300">学习课程</a>
+          <a href="competition.html" class="hover:text-secondary transition-colors duration-300">竞赛信息</a>
+          <a href="products.html" class="hover:text-secondary transition-colors duration-300">文创产品</a>
+          <div class="relative group">
+            <a href="#" class="text-secondary font-bold transition-colors duration-300">更多 <i class="fa fa-angle-down ml-1"></i></a>
+            <div class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+              <a href="history.html" class="block px-4 py-2 text-neutral-dark hover:bg-primary hover:text-white rounded-t-lg text-sm">历史渊源</a>
+              <a href="technique.html" class="block px-4 py-2 text-neutral-dark hover:bg-primary hover:text-white text-sm">技艺技法</a>
+              <a href="gallery.html" class="block px-4 py-2 text-neutral-dark hover:bg-primary hover:text-white text-sm">影像资料</a>
+              <a href="international.html" class="block px-4 py-2 text-neutral-dark hover:bg-primary hover:text-white text-sm">国际交流</a>
+              <a href="database.html" class="block px-4 py-2 text-neutral-dark hover:bg-primary hover:text-white text-sm">数据统计</a>
+              <a href="about.html" class="block px-4 py-2 text-neutral-dark hover:bg-primary hover:text-white rounded-b-lg text-sm">关于我们</a>
+            </div>
+          </div>
+        </div>
+        <button id="menu-toggle" class="md:hidden text-white text-2xl focus:outline-none"><i class="fa fa-bars"></i></button>
+      </div>
+      <div id="mobile-menu" class="md:hidden hidden bg-primary/95 py-4 px-4 shadow-lg">
+        <div class="flex flex-col space-y-3">
+          <a href="index.html" class="hover:text-secondary py-1">首页</a>
+          <a href="policy.html" class="hover:text-secondary py-1">政策知识</a>
+          <a href="heritage.html" class="hover:text-secondary py-1">传承人物</a>
+          <a href="activities.html" class="hover:text-secondary py-1">活动新闻</a>
+          <a href="courses.html" class="hover:text-secondary py-1">学习课程</a>
+          <a href="competition.html" class="hover:text-secondary py-1">竞赛信息</a>
+          <a href="products.html" class="hover:text-secondary py-1">文创产品</a>
+          <hr class="border-white/20">
+          <a href="history.html" class="text-secondary font-bold py-1">历史渊源</a>
+          <a href="technique.html" class="hover:text-secondary py-1">技艺技法</a>
+          <a href="gallery.html" class="hover:text-secondary py-1">影像资料</a>
+          <a href="international.html" class="hover:text-secondary py-1">国际交流</a>
+          <a href="database.html" class="hover:text-secondary py-1">数据统计</a>
+          <a href="about.html" class="hover:text-secondary py-1">关于我们</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <section class="relative pt-28 pb-16 bg-tertiary text-white">
+    <div class="container mx-auto px-4 text-center">
+      <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-zcool-xiaowei mb-4">空竹历史渊源</h1>
+      <div class="w-24 h-1 bg-secondary mx-auto mb-6"></div>
+      <p class="text-lg text-white/80 max-w-3xl mx-auto">探寻抖空竹千年历史，追溯从古代民间游戏到国家级非遗的文化演变之路</p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+
+      <div class="max-w-4xl mx-auto mb-20">
+        <h2 class="text-3xl font-zcool-xiaowei text-tertiary mb-8 text-center">空竹的起源与早期发展</h2>
+        <div class="bg-neutral rounded-2xl p-8 leading-relaxed space-y-5 text-neutral-dark/80">
+          <p>抖空竹，古称"空钟""扯铃""响簧""闷葫芦"等，是中国民间传统体育游艺活动，其历史可追溯至三国时期（公元220-280年）。据明代刘侗、于奕正所著《帝京景物略》记载："空钟者，刳木中空，旁口荡以沥青，卓地如仰钟，而以绳之两端旋之，声如钟鸣。"这是目前发现关于空竹最早的较为详细的文字记载。</p>
+          <p>关于空竹的起源主要有三种学术观点：其一为"陀螺演变说"，认为空竹是由新石器时代出土的陀螺类器具演变而来，先民在日常劳动和游戏中发现了旋转物体的平衡原理；其二为"乐器衍生说"，认为空竹源于古代民间响器，其鸣响特性体现了古人对声学原理的应用；其三为"军事训练说"，认为抖空竹的动作与古代武士的兵器训练有着密切关联。三种观点从不同维度诠释了空竹作为综合文化载体的多元起源。</p>
+          <p>唐代时期，空竹已经传入宫廷和贵族生活圈。敦煌莫高窟壁画中就有类似抖空竹的图案描绘，表明当时空竹在西北地区已有流传。宋代孟元老《东京梦华录》中记载的"水傀儡""百戏"等民间技艺中，包含了抖空竹的雏形表演。这表明至迟在宋代，抖空竹已成为城市市民文化娱乐的重要组成部分。</p>
+          <p>明清两代是空竹发展的鼎盛时期。明代《帝京景物略》《燕京岁时记》等文献对抖空竹的形制、玩法和节日表演场景有详尽记载。清代乾隆年间，抖空竹被正式收录于《四库全书》子部艺术类，标志着其文化地位得到官方认可。当时北京天桥一带的空竹艺人云集，形成了"天桥空竹"这一独特的表演流派，"抖、捞、盘、绕、抛、接"六大核心技法体系在此期间基本成型。</p>
+          <p>清末民初，随着社会变革和城市化进程，空竹从宫廷贵族娱乐逐渐回归民间，成为北京、天津、河北、河南、山东等地庙会、集市和节庆活动中不可或缺的民间技艺。天津"泥人张"彩塑作品中就有栩栩如生的抖空竹人物造型，印证了空竹在当时民间文化中的普及程度。</p>
+        </div>
+      </div>
+
+      <div class="max-w-4xl mx-auto mb-20">
+        <h2 class="text-3xl font-zcool-xiaowei text-tertiary mb-8 text-center">空竹的地域流派与文化特色</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-primary">
+            <h3 class="text-xl font-bold text-tertiary mb-3">北京派 · 天桥空竹</h3>
+            <p class="text-neutral-dark/70 text-sm leading-relaxed">以北京天桥地区为核心传承地，技法严谨规范，讲究"稳、准、美"，注重动作的规范性和表演的观赏性。北京派空竹以"响"为特色，空竹哨口设计巧妙，抖起来声音洪亮悦耳。代表传承人包括国家级非遗传承人张国良、李连元等。北京地区现有空竹传习站和活动站60余个，形成了完善的城市传承网络。</p>
+            <div class="flex flex-wrap gap-2 mt-3"><span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded-full">技法严谨</span><span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded-full">哨口响亮</span><span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded-full">传承站60+</span></div>
+          </div>
+          <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-secondary">
+            <h3 class="text-xl font-bold text-tertiary mb-3">天津派 · 津门空竹</h3>
+            <p class="text-neutral-dark/70 text-sm leading-relaxed">天津空竹以"巧"著称，注重技巧的灵活多变和即兴发挥，在传统技法基础上发展出大量创新动作。天津空竹艺人善于将戏剧表演、相声元素融入空竹表演，形成了独特的"说唱空竹"艺术形式。天津空竹协会下辖10余个分会，每年举办空竹艺术节，吸引来自全国各地的空竹爱好者参与。</p>
+            <div class="flex flex-wrap gap-2 mt-3"><span class="bg-secondary/10 text-secondary text-xs px-2 py-1 rounded-full">灵活多变</span><span class="bg-secondary/10 text-secondary text-xs px-2 py-1 rounded-full">说唱空竹</span><span class="bg-secondary/10 text-secondary text-xs px-2 py-1 rounded-full">10+分会</span></div>
+          </div>
+          <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-tertiary">
+            <h3 class="text-xl font-bold text-tertiary mb-3">河南派 · 中原空竹</h3>
+            <p class="text-neutral-dark/70 text-sm leading-relaxed">河南被誉为空竹的重要发源地之一，中原空竹以"刚"见长，动作幅度大、力度强、气势磅礴，体现了中原文化的雄浑与大气。河南空竹注重团体表演，常以数十人乃至上百人的集体空竹表演震撼观众。开封、洛阳、郑州等地均有悠久的空竹传承历史，民间空竹团体活跃。</p>
+            <div class="flex flex-wrap gap-2 mt-3"><span class="bg-tertiary/10 text-tertiary text-xs px-2 py-1 rounded-full">刚劲有力</span><span class="bg-tertiary/10 text-tertiary text-xs px-2 py-1 rounded-full">团体表演</span><span class="bg-tertiary/10 text-tertiary text-xs px-2 py-1 rounded-full">起源地之一</span></div>
+          </div>
+          <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-[#38A169]">
+            <h3 class="text-xl font-bold text-tertiary mb-3">山东派 · 齐鲁空竹</h3>
+            <p class="text-neutral-dark/70 text-sm leading-relaxed">山东空竹以"实"为特色，注重空竹技艺的实际应用价值，将空竹与体育教育、康养健身紧密结合。烟台南山学院作为山东省空竹非遗传承教育的重要基地，开发了"扬竹康养十式"等创新课程体系，推动空竹进校园、进社区。山东空竹传承注重产学研一体化，在人才培养和产业发展方面走在全国前列。</p>
+            <div class="flex flex-wrap gap-2 mt-3"><span class="bg-[#38A169]/10 text-[#38A169] text-xs px-2 py-1 rounded-full">康养结合</span><span class="bg-[#38A169]/10 text-[#38A169] text-xs px-2 py-1 rounded-full">产学研</span><span class="bg-[#38A169]/10 text-[#38A169] text-xs px-2 py-1 rounded-full">扬竹康养十式</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="max-w-4xl mx-auto mb-20">
+        <h2 class="text-3xl font-zcool-xiaowei text-tertiary mb-8 text-center">空竹历史大事年表</h2>
+        <div class="relative">
+          <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-primary/20 hidden md:block"></div>
+          <div class="space-y-8">
+            <div class="flex flex-col md:flex-row items-start">
+              <div class="bg-primary text-white rounded-full w-16 h-16 flex items-center justify-center font-bold text-lg mb-4 md:mb-0 md:mr-8 z-10 shrink-0">三国</div>
+              <div class="bg-neutral rounded-xl p-6 flex-1"><h3 class="text-lg font-bold text-tertiary mb-2">三国时期（220-280年）</h3><p class="text-neutral-dark/70">空竹的原始雏形出现，与古代陀螺游戏和百戏表演有着密切关联。曹植《空竹赋》中提及的空竹类游戏，是迄今发现最早的文献线索之一。</p></div>
+            </div>
+            <div class="flex flex-col md:flex-row items-start">
+              <div class="bg-secondary text-white rounded-full w-16 h-16 flex items-center justify-center font-bold text-lg mb-4 md:mb-0 md:mr-8 z-10 shrink-0">唐代</div>
+              <div class="bg-neutral rounded-xl p-6 flex-1"><h3 class="text-lg font-bold text-tertiary mb-2">唐代（618-907年）</h3><p class="text-neutral-dark/70">空竹传入宫廷贵族生活圈，敦煌壁画中出现了类似抖空竹的图像描绘。空竹逐渐从民间走向上层社会，制作工艺和表演技巧得到显著提升。</p></div>
+            </div>
+            <div class="flex flex-col md:flex-row items-start">
+              <div class="bg-tertiary text-white rounded-full w-16 h-16 flex items-center justify-center font-bold text-lg mb-4 md:mb-0 md:mr-8 z-10 shrink-0">宋代</div>
+              <div class="bg-neutral rounded-xl p-6 flex-1"><h3 class="text-lg font-bold text-tertiary mb-2">宋代（960-1279年）</h3><p class="text-neutral-dark/70">抖空竹成为城市市民文化娱乐的重要组成部分，孟元老《东京梦华录》等笔记体文献中对空竹有明确记载，说明空竹已完全融入市民日常生活。</p></div>
+            </div>
+            <div class="flex flex-col md:flex-row items-start">
+              <div class="bg-[#38A169] text-white rounded-full w-16 h-16 flex items-center justify-center font-bold text-lg mb-4 md:mb-0 md:mr-8 z-10 shrink-0">明代</div>
+              <div class="bg-neutral rounded-xl p-6 flex-1"><h3 class="text-lg font-bold text-tertiary mb-2">明代（1368-1644年）</h3><p class="text-neutral-dark/70">空竹发展进入鼎盛时期。《帝京景物略》对空竹的形制结构和玩法进行了详细描述，"六大核心技法"体系在此期间基本成型。天桥空竹流派兴起。</p></div>
+            </div>
+            <div class="flex flex-col md:flex-row items-start">
+              <div class="bg-[#805AD5] text-white rounded-full w-16 h-16 flex items-center justify-center font-bold text-lg mb-4 md:mb-0 md:mr-8 z-10 shrink-0">清代</div>
+              <div class="bg-neutral rounded-xl p-6 flex-1"><h3 class="text-lg font-bold text-tertiary mb-2">清代（1644-1912年）</h3><p class="text-neutral-dark/70">乾隆年间空竹被收录于《四库全书》，北京天桥一带空竹艺人云集，空竹制作工艺达到顶峰。出现了"闷葫芦""地铃"等多种变体空竹，空竹文化达到历史高峰。</p></div>
+            </div>
+            <div class="flex flex-col md:flex-row items-start">
+              <div class="bg-[#DD6B20] text-white rounded-full w-16 h-16 flex items-center justify-center font-bold text-lg mb-4 md:mb-0 md:mr-8 z-10 shrink-0">民国</div>
+              <div class="bg-neutral rounded-xl p-6 flex-1"><h3 class="text-lg font-bold text-tertiary mb-2">民国时期（1912-1949年）</h3><p class="text-neutral-dark/70">空竹从宫廷贵族娱乐全面回归民间，成为庙会、集市和节庆活动中的必备技艺。天津"泥人张"等民间工艺作品中出现了抖空竹人物造型，反映了空竹在民间文化中的普及度。</p></div>
+            </div>
+            <div class="flex flex-col md:flex-row items-start">
+              <div class="bg-primary text-white rounded-full w-16 h-16 flex items-center justify-center font-bold text-lg mb-4 md:mb-0 md:mr-8 z-10 shrink-0">1950s</div>
+              <div class="bg-neutral rounded-xl p-6 flex-1"><h3 class="text-lg font-bold text-tertiary mb-2">新中国成立初期（1950s-1970s）</h3><p class="text-neutral-dark/70">空竹被纳入群众体育运动体系，各级体育部门组织空竹培训和比赛。北京市劳动人民文化宫等场所成为空竹活动的重要阵地。文革期间空竹活动受到影响，但民间传承始终未断。</p></div>
+            </div>
+            <div class="flex flex-col md:flex-row items-start">
+              <div class="bg-secondary text-white rounded-full w-16 h-16 flex items-center justify-center font-bold text-lg mb-4 md:mb-0 md:mr-8 z-10 shrink-0">2006</div>
+              <div class="bg-neutral rounded-xl p-6 flex-1"><h3 class="text-lg font-bold text-tertiary mb-2">2006年 · 里程碑</h3><p class="text-neutral-dark/70">2006年5月20日，抖空竹经中华人民共和国国务院批准列入第一批国家级非物质文化遗产名录（编号VI-4）。这是空竹文化保护传承史上具有里程碑意义的事件，空竹技艺的文化价值获得国家最高层面的正式认可。</p></div>
+            </div>
+            <div class="flex flex-col md:flex-row items-start">
+              <div class="bg-tertiary text-white rounded-full w-16 h-16 flex items-center justify-center font-bold text-lg mb-4 md:mb-0 md:mr-8 z-10 shrink-0">2011</div>
+              <div class="bg-neutral rounded-xl p-6 flex-1"><h3 class="text-lg font-bold text-tertiary mb-2">2011年 · 非遗法</h3><p class="text-neutral-dark/70">《中华人民共和国非物质文化遗产法》正式施行，空竹非遗保护获得系统性的法律制度保障。各级传承人认定、传习所建设、传承活动开展等工作全面纳入法治化轨道。</p></div>
+            </div>
+            <div class="flex flex-col md:flex-row items-start">
+              <div class="bg-[#38A169] text-white rounded-full w-16 h-16 flex items-center justify-center font-bold text-lg mb-4 md:mb-0 md:mr-8 z-10 shrink-0">2025</div>
+              <div class="bg-neutral rounded-xl p-6 flex-1"><h3 class="text-lg font-bold text-tertiary mb-2">2025年 · 数字化时代</h3><p class="text-neutral-dark/70">空竹非遗保护进入数字化、智能化新阶段。烟台南山学院"抖趣竹风"团队建成中国空竹非遗数据库，实现空竹技艺的数字化记录、VR/AI智能教学和全媒体传播，为空竹非遗的活态传承与创新发展开启了新篇章。</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-zcool-xiaowei text-tertiary mb-8 text-center">空竹名称演变考</h2>
+        <div class="overflow-x-auto">
+          <table class="w-full bg-white rounded-xl shadow-lg overflow-hidden">
+            <thead class="bg-tertiary text-white">
+              <tr><th class="py-4 px-6 text-left">朝代</th><th class="py-4 px-6 text-left">称谓</th><th class="py-4 px-6 text-left">出处/文献</th><th class="py-4 px-6 text-left">含义与说明</th></tr>
+            </thead>
+            <tbody class="divide-y divide-neutral">
+              <tr class="hover:bg-neutral/50"><td class="py-4 px-6 font-bold">三国</td><td class="py-4 px-6">空钟</td><td class="py-4 px-6">曹植《空竹赋》</td><td class="py-4 px-6 text-sm text-neutral-dark/70">最早的文献记载之一，"空钟"意为中空而能发出钟声的玩具</td></tr>
+              <tr class="hover:bg-neutral/50"><td class="py-4 px-6 font-bold">唐宋</td><td class="py-4 px-6">空竹、扯铃</td><td class="py-4 px-6">敦煌壁画、《东京梦华录》</td><td class="py-4 px-6 text-sm text-neutral-dark/70">"空竹"之名始于此时，"扯铃"强调操作绳扯之动作</td></tr>
+              <tr class="hover:bg-neutral/50"><td class="py-4 px-6 font-bold">明代</td><td class="py-4 px-6">空钟、抖空竹</td><td class="py-4 px-6">《帝京景物略》</td><td class="py-4 px-6 text-sm text-neutral-dark/70">"抖空竹"三字组合首次出现在官方文献中</td></tr>
+              <tr class="hover:bg-neutral/50"><td class="py-4 px-6 font-bold">清代</td><td class="py-4 px-6">响簧、闷葫芦</td><td class="py-4 px-6">《燕京岁时记》</td><td class="py-4 px-6 text-sm text-neutral-dark/70">以声音特征命名，"响簧"形容其振动声响，"闷葫芦"指单轮空竹</td></tr>
+              <tr class="hover:bg-neutral/50"><td class="py-4 px-6 font-bold">民国至今</td><td class="py-4 px-6">抖空竹</td><td class="py-4 px-6">现代通用称谓</td><td class="py-4 px-6 text-sm text-neutral-dark/70">经国家非遗名录正式确认的标准名称</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="text-center mt-16">
+        <a href="index.html" class="inline-block bg-tertiary hover:bg-tertiary/90 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 mr-4"><i class="fa fa-home mr-2"></i>返回首页</a>
+        <a href="technique.html" class="inline-block bg-primary hover:bg-primary/90 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300">技艺技法 <i class="fa fa-angle-right ml-2"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-neutral-dark text-white pt-16 pb-8">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div>
+          <h3 class="text-xl font-bold mb-4">关于我们</h3>
+          <p class="text-neutral/70 mb-4">中国空竹数据库系统致力于收集、整理和传播空竹非遗文化。由烟台南山学院"抖趣竹风"大学生创新创业团队开发。</p>
+          <div class="flex space-x-4"><a href="#" class="text-neutral hover:text-white transition-colors duration-300"><i class="fa fa-weibo text-xl"></i></a><a href="#" class="text-neutral hover:text-white transition-colors duration-300"><i class="fa fa-wechat text-xl"></i></a><a href="#" class="text-neutral hover:text-white transition-colors duration-300"><i class="fa fa-youtube-play text-xl"></i></a><a href="#" class="text-neutral hover:text-white transition-colors duration-300"><i class="fa fa-instagram text-xl"></i></a></div>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-4">快速链接</h3>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="text-neutral hover:text-white">首页</a></li><li><a href="policy.html" class="text-neutral hover:text-white">政策知识</a></li><li><a href="heritage.html" class="text-neutral hover:text-white">传承人物</a></li><li><a href="courses.html" class="text-neutral hover:text-white">学习课程</a></li><li><a href="technique.html" class="text-neutral hover:text-white">技艺技法</a></li><li><a href="gallery.html" class="text-neutral hover:text-white">影像资料</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-4">更多资源</h3>
+          <ul class="space-y-2">
+            <li><a href="history.html" class="text-neutral hover:text-white">历史渊源</a></li><li><a href="activities.html" class="text-neutral hover:text-white">活动新闻</a></li><li><a href="competition.html" class="text-neutral hover:text-white">竞赛信息</a></li><li><a href="products.html" class="text-neutral hover:text-white">文创产品</a></li><li><a href="international.html" class="text-neutral hover:text-white">国际交流</a></li><li><a href="about.html" class="text-neutral hover:text-white">关于我们</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-4">联系我们</h3>
+          <ul class="space-y-2"><li class="flex items-start"><i class="fa fa-map-marker mt-1 mr-3 text-primary"></i><span class="text-neutral/70">山东省烟台市龙口市烟台南山学院</span></li><li class="flex items-center"><i class="fa fa-phone mr-3 text-primary"></i><span class="text-neutral/70">0535-1234567</span></li><li class="flex items-center"><i class="fa fa-envelope mr-3 text-primary"></i><span class="text-neutral/70">douquzhufeng@example.com</span></li></ul>
+        </div>
+      </div>
+      <div class="border-t border-neutral/20 pt-8"><div class="flex flex-col md:flex-row justify-between items-center"><p class="text-neutral/60 text-sm mb-4 md:mb-0">&copy; 2025 中国空竹数据库系统. 保留所有权利.</p><div class="flex space-x-4"><a href="#" class="text-neutral/60 hover:text-white text-sm">隐私政策</a><a href="#" class="text-neutral/60 hover:text-white text-sm">使用条款</a><a href="#" class="text-neutral/60 hover:text-white text-sm">网站地图</a></div></div></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('menu-toggle').addEventListener('click', function() {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+  </script>
+</body></html>

@@ -1,0 +1,162 @@
+<html lang="zh-CN"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>空竹数字影像资料馆 - 中国空竹数据库系统</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { primary: '#C53030', secondary: '#D69E2E', tertiary: '#1A365D', neutral: '#F7FAFC', 'neutral-dark': '#2D3748' },
+          fontFamily: { 'zcool-xiaowei': ['"ZCOOL XiaoWei"', 'serif'], 'zcool-qingke': ['"ZCOOL QingKe HuangYou"', 'sans-serif'] },
+        },
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities { .content-auto { content-visibility: auto; } .text-shadow { text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); } .text-shadow-lg { text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7); } .animate-float { animation: float 3s ease-in-out infinite; } .animate-spin-slow { animation: spin 15s linear infinite; } }
+    @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-10px); } 100% { transform: translateY(0px); } }
+  </style>
+</head>
+<body class="font-sans bg-neutral text-neutral-dark">
+
+  <header id="navbar" class="fixed w-full top-0 z-50 bg-primary/90 text-white shadow-lg">
+    <nav>
+      <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+        <div class="flex items-center">
+          <div class="w-12 h-12 mr-3 relative"><div class="absolute inset-0 animate-spin-slow"><i class="fa fa-circle-o-notch text-secondary text-3xl"></i></div><div class="absolute inset-0 flex items-center justify-center"><i class="fa fa-circle text-primary text-2xl"></i></div></div>
+          <a href="index.html" class="text-2xl font-zcool-qingke tracking-wider">中国空竹数据库</a>
+        </div>
+        <div class="hidden md:flex space-x-6">
+          <a href="index.html" class="hover:text-secondary transition-colors duration-300">首页</a>
+          <a href="policy.html" class="hover:text-secondary transition-colors duration-300">政策知识</a>
+          <a href="heritage.html" class="hover:text-secondary transition-colors duration-300">传承人物</a>
+          <a href="activities.html" class="hover:text-secondary transition-colors duration-300">活动新闻</a>
+          <a href="courses.html" class="hover:text-secondary transition-colors duration-300">学习课程</a>
+          <a href="competition.html" class="hover:text-secondary transition-colors duration-300">竞赛信息</a>
+          <a href="products.html" class="hover:text-secondary transition-colors duration-300">文创产品</a>
+          <div class="relative group">
+            <a href="#" class="text-secondary font-bold transition-colors duration-300">更多 <i class="fa fa-angle-down ml-1"></i></a>
+            <div class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+              <a href="history.html" class="block px-4 py-2 text-neutral-dark hover:bg-primary hover:text-white rounded-t-lg text-sm">历史渊源</a>
+              <a href="technique.html" class="block px-4 py-2 text-neutral-dark hover:bg-primary hover:text-white text-sm">技艺技法</a>
+              <a href="gallery.html" class="block px-4 py-2 text-neutral-dark hover:bg-primary hover:text-white text-sm font-bold">影像资料</a>
+              <a href="international.html" class="block px-4 py-2 text-neutral-dark hover:bg-primary hover:text-white text-sm">国际交流</a>
+              <a href="database.html" class="block px-4 py-2 text-neutral-dark hover:bg-primary hover:text-white text-sm">数据统计</a>
+              <a href="about.html" class="block px-4 py-2 text-neutral-dark hover:bg-primary hover:text-white rounded-b-lg text-sm">关于我们</a>
+            </div>
+          </div>
+        </div>
+        <button id="menu-toggle" class="md:hidden text-white text-2xl focus:outline-none"><i class="fa fa-bars"></i></button>
+      </div>
+      <div id="mobile-menu" class="md:hidden hidden bg-primary/95 py-4 px-4 shadow-lg">
+        <div class="flex flex-col space-y-3">
+          <a href="index.html" class="hover:text-secondary py-1">首页</a><a href="policy.html" class="hover:text-secondary py-1">政策知识</a><a href="heritage.html" class="hover:text-secondary py-1">传承人物</a><a href="activities.html" class="hover:text-secondary py-1">活动新闻</a><a href="courses.html" class="hover:text-secondary py-1">学习课程</a><a href="competition.html" class="hover:text-secondary py-1">竞赛信息</a><a href="products.html" class="hover:text-secondary py-1">文创产品</a>
+          <hr class="border-white/20">
+          <a href="history.html" class="hover:text-secondary py-1">历史渊源</a><a href="technique.html" class="hover:text-secondary py-1">技艺技法</a><a href="gallery.html" class="text-secondary font-bold py-1">影像资料</a><a href="international.html" class="hover:text-secondary py-1">国际交流</a><a href="database.html" class="hover:text-secondary py-1">数据统计</a><a href="about.html" class="hover:text-secondary py-1">关于我们</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <section class="relative pt-28 pb-16 bg-tertiary text-white">
+    <div class="container mx-auto px-4 text-center">
+      <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-zcool-xiaowei mb-4">空竹数字影像资料馆</h1>
+      <div class="w-24 h-1 bg-secondary mx-auto mb-6"></div>
+      <p class="text-lg text-white/80 max-w-3xl mx-auto">收录空竹非遗高清影像、纪录片、教学视频和珍贵历史照片，构建多媒体数字资源库</p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+
+      <div class="flex flex-wrap gap-4 mb-12 justify-center">
+        <button class="bg-primary text-white font-bold px-6 py-2 rounded-full">全部影像</button>
+        <button class="bg-neutral hover:bg-neutral-dark/10 text-neutral-dark font-bold px-6 py-2 rounded-full">纪录片</button>
+        <button class="bg-neutral hover:bg-neutral-dark/10 text-neutral-dark font-bold px-6 py-2 rounded-full">教学视频</button>
+        <button class="bg-neutral hover:bg-neutral-dark/10 text-neutral-dark font-bold px-6 py-2 rounded-full">活动纪实</button>
+        <button class="bg-neutral hover:bg-neutral-dark/10 text-neutral-dark font-bold px-6 py-2 rounded-full">历史照片</button>
+        <button class="bg-neutral hover:bg-neutral-dark/10 text-neutral-dark font-bold px-6 py-2 rounded-full">VR全景</button>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden group">
+          <div class="aspect-video overflow-hidden"><img src="https://picsum.photos/600/400?random=40" alt="纪录片" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"></div>
+          <div class="p-5">
+            <div class="flex items-center mb-2"><span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full mr-2">纪录片</span><span class="text-neutral-dark/50 text-xs">45分钟</span></div>
+            <h3 class="text-lg font-bold text-tertiary mb-2">《百年空竹——国家级非遗传承人口述史》</h3>
+            <p class="text-neutral-dark/70 text-sm mb-3">通过三位国家级传承人的口述，讲述近百年来空竹技艺的传承脉络、历史变迁和文化记忆。包含珍贵历史影像资料和实地拍摄的空竹表演片段。</p>
+            <div class="flex items-center justify-between"><span class="text-sm text-neutral-dark/50"><i class="fa fa-eye mr-1"></i>12,580次播放</span><a href="#" class="text-primary text-sm hover:text-primary/80">观看视频 <i class="fa fa-play-circle ml-1"></i></a></div>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden group">
+          <div class="aspect-video overflow-hidden"><img src="https://picsum.photos/600/400?random=41" alt="教学" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"></div>
+          <div class="p-5">
+            <div class="flex items-center mb-2"><span class="bg-[#38A169]/10 text-[#38A169] text-xs px-3 py-1 rounded-full mr-2">教学视频</span><span class="text-neutral-dark/50 text-xs">120分钟</span></div>
+            <h3 class="text-lg font-bold text-tertiary mb-2">《空竹入门十二式——零基础完全教学》</h3>
+            <p class="text-neutral-dark/70 text-sm mb-3">由省级传承人亲自示范讲解，从握竿姿势到基本花式动作的全套教学视频。采用多角度拍摄和慢动作分解，确保每个动作细节清晰可见。</p>
+            <div class="flex items-center justify-between"><span class="text-sm text-neutral-dark/50"><i class="fa fa-eye mr-1"></i>28,340次播放</span><a href="#" class="text-primary text-sm hover:text-primary/80">观看视频 <i class="fa fa-play-circle ml-1"></i></a></div>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden group">
+          <div class="aspect-video overflow-hidden"><img src="https://picsum.photos/600/400?random=42" alt="活动纪实" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"></div>
+          <div class="p-5">
+            <div class="flex items-center mb-2"><span class="bg-secondary/10 text-secondary text-xs px-3 py-1 rounded-full mr-2">活动纪实</span><span class="text-neutral-dark/50 text-xs">30分钟</span></div>
+            <h3 class="text-lg font-bold text-tertiary mb-2">《2025国际空竹文化节开幕式精彩集锦》</h3>
+            <p class="text-neutral-dark/70 text-sm mb-3">记录2025年国际空竹文化节开幕式的精彩瞬间，涵盖12个国家代表团的表演精华、大师工作坊纪实和观众互动场景。</p>
+            <div class="flex items-center justify-between"><span class="text-sm text-neutral-dark/50"><i class="fa fa-eye mr-1"></i>8,920次播放</span><a href="#" class="text-primary text-sm hover:text-primary/80">观看视频 <i class="fa fa-play-circle ml-1"></i></a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-16">
+        <h2 class="text-3xl font-zcool-xiaowei text-tertiary mb-8 text-center">空竹历史照片档案馆</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="relative group overflow-hidden rounded-xl"><img src="https://picsum.photos/300/300?random=50" alt="老照片" class="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-110"><div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4"><p class="text-white text-sm">1950年代天桥空竹艺人表演老照片</p></div></div>
+          <div class="relative group overflow-hidden rounded-xl"><img src="https://picsum.photos/300/300?random=51" alt="老照片" class="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-110"><div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4"><p class="text-white text-sm">1980年代北京空竹制作作坊</p></div></div>
+          <div class="relative group overflow-hidden rounded-xl"><img src="https://picsum.photos/300/300?random=52" alt="老照片" class="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-110"><div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4"><p class="text-white text-sm">1990年代空竹进校园活动</p></div></div>
+          <div class="relative group overflow-hidden rounded-xl"><img src="https://picsum.photos/300/300?random=53" alt="老照片" class="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-110"><div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4"><p class="text-white text-sm">2006年首批国家级非遗证书颁发仪式</p></div></div>
+          <div class="relative group overflow-hidden rounded-xl"><img src="https://picsum.photos/300/300?random=54" alt="老照片" class="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-110"><div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4"><p class="text-white text-sm">传统手工空竹制作工艺流程</p></div></div>
+          <div class="relative group overflow-hidden rounded-xl"><img src="https://picsum.photos/300/300?random=55" alt="老照片" class="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-110"><div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4"><p class="text-white text-sm">国家级传承人教学现场</p></div></div>
+          <div class="relative group overflow-hidden rounded-xl"><img src="https://picsum.photos/300/300?random=56" alt="老照片" class="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-110"><div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4"><p class="text-white text-sm">国际空竹交流活动合影</p></div></div>
+          <div class="relative group overflow-hidden rounded-xl"><img src="https://picsum.photos/300/300?random=57" alt="老照片" class="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-110"><div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4"><p class="text-white text-sm">空竹文创产品设计手稿</p></div></div>
+        </div>
+      </div>
+
+      <div class="mb-16">
+        <h2 class="text-3xl font-zcool-xiaowei text-tertiary mb-8 text-center">影像资源统计</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div class="bg-neutral rounded-xl p-6 text-center hover:shadow-lg transition-shadow duration-300"><div class="text-4xl font-bold text-primary mb-2">86</div><div class="text-neutral-dark/70">纪录片/专题片</div></div>
+          <div class="bg-neutral rounded-xl p-6 text-center hover:shadow-lg transition-shadow duration-300"><div class="text-4xl font-bold text-secondary mb-2">240</div><div class="text-neutral-dark/70">教学视频集数</div></div>
+          <div class="bg-neutral rounded-xl p-6 text-center hover:shadow-lg transition-shadow duration-300"><div class="text-4xl font-bold text-tertiary mb-2">1,580</div><div class="text-neutral-dark/70">历史照片档案</div></div>
+          <div class="bg-neutral rounded-xl p-6 text-center hover:shadow-lg transition-shadow duration-300"><div class="text-4xl font-bold text-[#38A169] mb-2">32</div><div class="text-neutral-dark/70">VR全景视频</div></div>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <a href="index.html" class="inline-block bg-tertiary hover:bg-tertiary/90 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 mr-4"><i class="fa fa-home mr-2"></i>返回首页</a>
+        <a href="international.html" class="inline-block bg-primary hover:bg-primary/90 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300">国际交流 <i class="fa fa-angle-right ml-2"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-neutral-dark text-white pt-16 pb-8">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div><h3 class="text-xl font-bold mb-4">关于我们</h3><p class="text-neutral/70 mb-4">中国空竹数据库系统致力于收集、整理和传播空竹非遗文化。由烟台南山学院"抖趣竹风"大学生创新创业团队开发。</p><div class="flex space-x-4"><a href="#" class="text-neutral hover:text-white"><i class="fa fa-weibo text-xl"></i></a><a href="#" class="text-neutral hover:text-white"><i class="fa fa-wechat text-xl"></i></a><a href="#" class="text-neutral hover:text-white"><i class="fa fa-youtube-play text-xl"></i></a><a href="#" class="text-neutral hover:text-white"><i class="fa fa-instagram text-xl"></i></a></div></div>
+        <div><h3 class="text-xl font-bold mb-4">快速链接</h3><ul class="space-y-2"><li><a href="index.html" class="text-neutral hover:text-white">首页</a></li><li><a href="policy.html" class="text-neutral hover:text-white">政策知识</a></li><li><a href="heritage.html" class="text-neutral hover:text-white">传承人物</a></li><li><a href="courses.html" class="text-neutral hover:text-white">学习课程</a></li><li><a href="technique.html" class="text-neutral hover:text-white">技艺技法</a></li><li><a href="gallery.html" class="text-neutral hover:text-white">影像资料</a></li></ul></div>
+        <div><h3 class="text-xl font-bold mb-4">更多资源</h3><ul class="space-y-2"><li><a href="history.html" class="text-neutral hover:text-white">历史渊源</a></li><li><a href="activities.html" class="text-neutral hover:text-white">活动新闻</a></li><li><a href="competition.html" class="text-neutral hover:text-white">竞赛信息</a></li><li><a href="products.html" class="text-neutral hover:text-white">文创产品</a></li><li><a href="international.html" class="text-neutral hover:text-white">国际交流</a></li><li><a href="about.html" class="text-neutral hover:text-white">关于我们</a></li></ul></div>
+        <div><h3 class="text-xl font-bold mb-4">联系我们</h3><ul class="space-y-2"><li class="flex items-start"><i class="fa fa-map-marker mt-1 mr-3 text-primary"></i><span class="text-neutral/70">山东省烟台市龙口市烟台南山学院</span></li><li class="flex items-center"><i class="fa fa-phone mr-3 text-primary"></i><span class="text-neutral/70">0535-1234567</span></li><li class="flex items-center"><i class="fa fa-envelope mr-3 text-primary"></i><span class="text-neutral/70">douquzhufeng@example.com</span></li></ul></div>
+      </div>
+      <div class="border-t border-neutral/20 pt-8"><div class="flex flex-col md:flex-row justify-between items-center"><p class="text-neutral/60 text-sm mb-4 md:mb-0">&copy; 2025 中国空竹数据库系统. 保留所有权利.</p><div class="flex space-x-4"><a href="#" class="text-neutral/60 hover:text-white text-sm">隐私政策</a><a href="#" class="text-neutral/60 hover:text-white text-sm">使用条款</a><a href="#" class="text-neutral/60 hover:text-white text-sm">网站地图</a></div></div></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('menu-toggle').addEventListener('click', function() { document.getElementById('mobile-menu').classList.toggle('hidden'); });
+  </script>
+</body></html>

@@ -1,0 +1,210 @@
+<html lang="zh-CN"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>数据库统计与使用指南 - 中国空竹数据库系统</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { primary: '#C53030', secondary: '#D69E2E', tertiary: '#1A365D', neutral: '#F7FAFC', 'neutral-dark': '#2D3748' },
+          fontFamily: { 'zcool-xiaowei': ['"ZCOOL XiaoWei"', 'serif'], 'zcool-qingke': ['"ZCOOL QingKe HuangYou"', 'sans-serif'] },
+        },
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities { .content-auto { content-visibility: auto; } .text-shadow { text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); } .text-shadow-lg { text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7); } .animate-float { animation: float 3s ease-in-out infinite; } .animate-spin-slow { animation: spin 15s linear infinite; } }
+    @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-10px); } 100% { transform: translateY(0px); } }
+  </style>
+</head>
+<body class="font-sans bg-neutral text-neutral-dark">
+
+  <header id="navbar" class="fixed w-full top-0 z-50 bg-primary/90 text-white shadow-lg">
+    <nav>
+      <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+        <div class="flex items-center">
+          <div class="w-12 h-12 mr-3 relative"><div class="absolute inset-0 animate-spin-slow"><i class="fa fa-circle-o-notch text-secondary text-3xl"></i></div><div class="absolute inset-0 flex items-center justify-center"><i class="fa fa-circle text-primary text-2xl"></i></div></div>
+          <a href="index.html" class="text-2xl font-zcool-qingke tracking-wider">中国空竹数据库</a>
+        </div>
+        <div class="hidden md:flex space-x-6">
+          <a href="index.html" class="hover:text-secondary transition-colors duration-300">首页</a>
+          <a href="policy.html" class="hover:text-secondary transition-colors duration-300">政策知识</a>
+          <a href="heritage.html" class="hover:text-secondary transition-colors duration-300">传承人物</a>
+          <a href="activities.html" class="hover:text-secondary transition-colors duration-300">活动新闻</a>
+          <a href="courses.html" class="hover:text-secondary transition-colors duration-300">学习课程</a>
+          <a href="competition.html" class="hover:text-secondary transition-colors duration-300">竞赛信息</a>
+          <a href="products.html" class="hover:text-secondary transition-colors duration-300">文创产品</a>
+          <div class="relative group">
+            <a href="#" class="text-secondary font-bold transition-colors duration-300">更多 <i class="fa fa-angle-down ml-1"></i></a>
+            <div class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+              <a href="history.html" class="block px-4 py-2 text-neutral-dark hover:bg-primary hover:text-white rounded-t-lg text-sm">历史渊源</a>
+              <a href="technique.html" class="block px-4 py-2 text-neutral-dark hover:bg-primary hover:text-white text-sm">技艺技法</a>
+              <a href="gallery.html" class="block px-4 py-2 text-neutral-dark hover:bg-primary hover:text-white text-sm">影像资料</a>
+              <a href="international.html" class="block px-4 py-2 text-neutral-dark hover:bg-primary hover:text-white text-sm">国际交流</a>
+              <a href="database.html" class="block px-4 py-2 text-neutral-dark hover:bg-primary hover:text-white text-sm font-bold">数据统计</a>
+              <a href="about.html" class="block px-4 py-2 text-neutral-dark hover:bg-primary hover:text-white rounded-b-lg text-sm">关于我们</a>
+            </div>
+          </div>
+        </div>
+        <button id="menu-toggle" class="md:hidden text-white text-2xl focus:outline-none"><i class="fa fa-bars"></i></button>
+      </div>
+      <div id="mobile-menu" class="md:hidden hidden bg-primary/95 py-4 px-4 shadow-lg">
+        <div class="flex flex-col space-y-3">
+          <a href="index.html" class="hover:text-secondary py-1">首页</a><a href="policy.html" class="hover:text-secondary py-1">政策知识</a><a href="heritage.html" class="hover:text-secondary py-1">传承人物</a><a href="activities.html" class="hover:text-secondary py-1">活动新闻</a><a href="courses.html" class="hover:text-secondary py-1">学习课程</a><a href="competition.html" class="hover:text-secondary py-1">竞赛信息</a><a href="products.html" class="hover:text-secondary py-1">文创产品</a>
+          <hr class="border-white/20">
+          <a href="history.html" class="hover:text-secondary py-1">历史渊源</a><a href="technique.html" class="hover:text-secondary py-1">技艺技法</a><a href="gallery.html" class="hover:text-secondary py-1">影像资料</a><a href="international.html" class="hover:text-secondary py-1">国际交流</a><a href="database.html" class="text-secondary font-bold py-1">数据统计</a><a href="about.html" class="hover:text-secondary py-1">关于我们</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <section class="relative pt-28 pb-16 bg-tertiary text-white">
+    <div class="container mx-auto px-4 text-center">
+      <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-zcool-xiaowei mb-4">数据库统计与使用指南</h1>
+      <div class="w-24 h-1 bg-secondary mx-auto mb-6"></div>
+      <p class="text-lg text-white/80 max-w-3xl mx-auto">全面了解中国空竹数据库系统的数据规模、技术架构和使用方法</p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+
+      <div class="max-w-5xl mx-auto mb-20">
+        <h2 class="text-3xl font-zcool-xiaowei text-tertiary mb-8 text-center">数据库全景统计</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+          <div class="bg-white rounded-xl shadow-lg p-6 text-center border-t-4 border-primary"><div class="text-5xl font-bold text-primary mb-2">32</div><div class="text-neutral-dark/70">收录传承人</div><div class="text-xs text-neutral-dark/40 mt-1">国家级5人 · 省级12人 · 市级15人</div></div>
+          <div class="bg-white rounded-xl shadow-lg p-6 text-center border-t-4 border-secondary"><div class="text-5xl font-bold text-secondary mb-2">156</div><div class="text-neutral-dark/70">政策文献条目</div><div class="text-xs text-neutral-dark/40 mt-1">国家级26 · 地方级98 · 学术32</div></div>
+          <div class="bg-white rounded-xl shadow-lg p-6 text-center border-t-4 border-tertiary"><div class="text-5xl font-bold text-tertiary mb-2">48</div><div class="text-neutral-dark/70">教学课程</div><div class="text-xs text-neutral-dark/40 mt-1">入门12 · 中级18 · 高级10 · 专项8</div></div>
+          <div class="bg-white rounded-xl shadow-lg p-6 text-center border-t-4 border-[#38A169]"><div class="text-5xl font-bold text-[#38A169] mb-2">260+</div><div class="text-neutral-dark/70">活动新闻记录</div><div class="text-xs text-neutral-dark/40 mt-1">文化节 · 校园 · 国际 · 社区 · 公益</div></div>
+          <div class="bg-white rounded-xl shadow-lg p-6 text-center border-t-4 border-[#805AD5]"><div class="text-5xl font-bold text-[#805AD5] mb-2">86</div><div class="text-neutral-dark/70">影像视频资源</div><div class="text-xs text-neutral-dark/40 mt-1">纪录片 · 教学片 · 活动纪实 · VR</div></div>
+          <div class="bg-white rounded-xl shadow-lg p-6 text-center border-t-4 border-[#DD6B20]"><div class="text-5xl font-bold text-[#DD6B20] mb-2">28</div><div class="text-neutral-dark/70">文创产品</div><div class="text-xs text-neutral-dark/40 mt-1">传统工艺 · 国潮 · 图书 · 智能</div></div>
+          <div class="bg-white rounded-xl shadow-lg p-6 text-center border-t-4 border-[#3182CE]"><div class="text-5xl font-bold text-[#3182CE] mb-2">18</div><div class="text-neutral-dark/70">国际覆盖国家</div><div class="text-xs text-neutral-dark/40 mt-1">亚洲 · 欧洲 · 北美洲 · 大洋洲</div></div>
+          <div class="bg-white rounded-xl shadow-lg p-6 text-center border-t-4 border-[#E53E3E]"><div class="text-5xl font-bold text-[#E53E3E] mb-2">200</div><div class="text-neutral-dark/70">标准动作收录</div><div class="text-xs text-neutral-dark/40 mt-1">六大技法 · 花式图谱 · 教学分解</div></div>
+        </div>
+      </div>
+
+      <div class="max-w-5xl mx-auto mb-20">
+        <h2 class="text-3xl font-zcool-xiaowei text-tertiary mb-8 text-center">数据增长趋势</h2>
+        <div class="bg-white rounded-xl shadow-lg p-8">
+          <div class="h-96"><canvas id="growthChart"></canvas></div>
+        </div>
+      </div>
+
+      <div class="max-w-5xl mx-auto mb-20">
+        <h2 class="text-3xl font-zcool-xiaowei text-tertiary mb-8 text-center">数据库模块结构</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-white rounded-xl shadow-lg p-6">
+            <h3 class="text-xl font-bold text-tertiary mb-4 flex items-center"><i class="fa fa-database text-primary text-2xl mr-3"></i>核心数据模块</h3>
+            <div class="space-y-3">
+              <div class="flex items-center justify-between py-2 border-b border-neutral"><span class="text-neutral-dark/70">传承人档案库</span><span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">32条记录</span></div>
+              <div class="flex items-center justify-between py-2 border-b border-neutral"><span class="text-neutral-dark/70">政策文献库</span><span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">156条记录</span></div>
+              <div class="flex items-center justify-between py-2 border-b border-neutral"><span class="text-neutral-dark/70">技艺动作库</span><span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">200条记录</span></div>
+              <div class="flex items-center justify-between py-2 border-b border-neutral"><span class="text-neutral-dark/70">活动新闻库</span><span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">260条记录</span></div>
+              <div class="flex items-center justify-between py-2 border-b border-neutral"><span class="text-neutral-dark/70">影像资料库</span><span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">86条记录</span></div>
+              <div class="flex items-center justify-between py-2"><span class="text-neutral-dark/70">产品信息库</span><span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">28条记录</span></div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl shadow-lg p-6">
+            <h3 class="text-xl font-bold text-tertiary mb-4 flex items-center"><i class="fa fa-cogs text-secondary text-2xl mr-3"></i>技术架构特点</h3>
+            <div class="space-y-3">
+              <div class="flex items-start"><div class="w-8 h-8 bg-secondary/10 rounded-full flex items-center justify-center mr-3 shrink-0"><i class="fa fa-check text-secondary text-sm"></i></div><div><span class="font-bold text-tertiary">响应式布局设计</span><p class="text-neutral-dark/70 text-sm">采用Tailwind CSS框架，支持PC端、平板和手机等多终端自适应访问</p></div></div>
+              <div class="flex items-start"><div class="w-8 h-8 bg-secondary/10 rounded-full flex items-center justify-center mr-3 shrink-0"><i class="fa fa-check text-secondary text-sm"></i></div><div><span class="font-bold text-tertiary">模块化页面架构</span><p class="text-neutral-dark/70 text-sm">13个功能页面相互独立又彼此关联，通过统一导航系统实现无缝跳转</p></div></div>
+              <div class="flex items-start"><div class="w-8 h-8 bg-secondary/10 rounded-full flex items-center justify-center mr-3 shrink-0"><i class="fa fa-check text-secondary text-sm"></i></div><div><span class="font-bold text-tertiary">数据可视化集成</span><p class="text-neutral-dark/70 text-sm">集成Chart.js图表库，实现竞赛数据、增长趋势等数据的动态可视化展示</p></div></div>
+              <div class="flex items-start"><div class="w-8 h-8 bg-secondary/10 rounded-full flex items-center justify-center mr-3 shrink-0"><i class="fa fa-check text-secondary text-sm"></i></div><div><span class="font-bold text-tertiary">中国风视觉设计</span><p class="text-neutral-dark/70 text-sm">红金蓝三色体系、ZCOOL中文字体、传统纹样元素构成统一的视觉识别系统</p></div></div>
+              <div class="flex items-start"><div class="w-8 h-8 bg-secondary/10 rounded-full flex items-center justify-center mr-3 shrink-0"><i class="fa fa-check text-secondary text-sm"></i></div><div><span class="font-bold text-tertiary">交互体验优化</span><p class="text-neutral-dark/70 text-sm">悬停动效、平滑滚动、图片懒加载、移动端下拉菜单等多处交互细节优化</p></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="max-w-5xl mx-auto mb-20">
+        <h2 class="text-3xl font-zcool-xiaowei text-tertiary mb-8 text-center">使用指南</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-neutral rounded-xl p-8 text-center hover:shadow-lg transition-shadow duration-300">
+            <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4"><i class="fa fa-search text-primary text-2xl"></i></div>
+            <h3 class="text-xl font-bold text-tertiary mb-3">查询检索</h3>
+            <p class="text-neutral-dark/70 text-sm leading-relaxed">通过顶部导航栏进入各功能模块，浏览分类信息。每个模块均设有筛选标签和分类导航，方便快速定位所需内容。建议初次使用者从首页"功能导航"区域开始浏览。</p>
+          </div>
+          <div class="bg-neutral rounded-xl p-8 text-center hover:shadow-lg transition-shadow duration-300">
+            <div class="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4"><i class="fa fa-download text-secondary text-2xl"></i></div>
+            <h3 class="text-xl font-bold text-tertiary mb-3">数据导出</h3>
+            <p class="text-neutral-dark/70 text-sm leading-relaxed">各数据表格页面均支持文本复制和数据导出功能。竞赛数据、传承人统计表、历史大事年表等结构化数据可通过浏览器原生功能进行复制和打印。</p>
+          </div>
+          <div class="bg-neutral rounded-xl p-8 text-center hover:shadow-lg transition-shadow duration-300">
+            <div class="w-16 h-16 bg-tertiary/10 rounded-full flex items-center justify-center mx-auto mb-4"><i class="fa fa-share-alt text-tertiary text-2xl"></i></div>
+            <h3 class="text-xl font-bold text-tertiary mb-3">资源共享</h3>
+            <p class="text-neutral-dark/70 text-sm leading-relaxed">数据库内容适用于学术研究、教育教学、文化传播等非商业用途。如需转载引用，请注明来源为"中国空竹数据库系统"。商业使用需获得团队书面授权。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-3xl font-zcool-xiaowei text-tertiary mb-8 text-center">内容贡献者名录</h2>
+        <div class="overflow-x-auto">
+          <table class="w-full bg-white rounded-xl shadow-lg overflow-hidden">
+            <thead class="bg-tertiary text-white">
+              <tr><th class="py-4 px-6 text-left">姓名/单位</th><th class="py-4 px-6 text-center">贡献类型</th><th class="py-4 px-6 text-left">贡献内容说明</th></tr>
+            </thead>
+            <tbody class="divide-y divide-neutral">
+              <tr class="hover:bg-neutral/50"><td class="py-4 px-6 font-bold text-tertiary">杨文哲</td><td class="py-4 px-6 text-center"><span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">技艺资料</span></td><td class="py-4 px-6 text-sm text-neutral-dark/70">提供核心技法动作演示与课程体系设计</td></tr>
+              <tr class="hover:bg-neutral/50"><td class="py-4 px-6 font-bold text-tertiary">张国良</td><td class="py-4 px-6 text-center"><span class="bg-secondary/10 text-secondary text-xs px-3 py-1 rounded-full">口述历史</span></td><td class="py-4 px-6 text-sm text-neutral-dark/70">提供40年空竹传承经历的口述史资料</td></tr>
+              <tr class="hover:bg-neutral/50"><td class="py-4 px-6 font-bold text-tertiary">烟台南山学院</td><td class="py-4 px-6 text-center"><span class="bg-tertiary/10 text-tertiary text-xs px-3 py-1 rounded-full">平台支持</span></td><td class="py-4 px-6 text-sm text-neutral-dark/70">提供非遗工坊场地、数据库服务器和技术研发支持</td></tr>
+              <tr class="hover:bg-neutral/50"><td class="py-4 px-6 font-bold text-tertiary">李明远</td><td class="py-4 px-6 text-center"><span class="bg-[#38A169]/10 text-[#38A169] text-xs px-3 py-1 rounded-full">系统开发</span></td><td class="py-4 px-6 text-sm text-neutral-dark/70">数据库系统架构设计与前端开发</td></tr>
+              <tr class="hover:bg-neutral/50"><td class="py-4 px-6 font-bold text-tertiary">王晓雨</td><td class="py-4 px-6 text-center"><span class="bg-[#805AD5]/10 text-[#805AD5] text-xs px-3 py-1 rounded-full">内容编辑</span></td><td class="py-4 px-6 text-sm text-neutral-dark/70">政策文献整理、活动新闻采编与产品信息录入</td></tr>
+              <tr class="hover:bg-neutral/50"><td class="py-4 px-6 font-bold text-tertiary">中国非遗保护中心</td><td class="py-4 px-6 text-center"><span class="bg-[#DD6B20]/10 text-[#DD6B20] text-xs px-3 py-1 rounded-full">学术支持</span></td><td class="py-4 px-6 text-sm text-neutral-dark/70">提供空竹非遗保护政策文献与学术研究成果</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="text-center mt-16">
+        <a href="index.html" class="inline-block bg-tertiary hover:bg-tertiary/90 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 mr-4"><i class="fa fa-home mr-2"></i>返回首页</a>
+        <a href="about.html" class="inline-block bg-primary hover:bg-primary/90 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300">关于我们 <i class="fa fa-angle-right ml-2"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-neutral-dark text-white pt-16 pb-8">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div><h3 class="text-xl font-bold mb-4">关于我们</h3><p class="text-neutral/70 mb-4">中国空竹数据库系统由烟台南山学院"抖趣竹风"大学生创新创业团队开发，致力于空竹非遗数字化保护与传播。</p><div class="flex space-x-4"><a href="#" class="text-neutral hover:text-white"><i class="fa fa-weibo text-xl"></i></a><a href="#" class="text-neutral hover:text-white"><i class="fa fa-wechat text-xl"></i></a><a href="#" class="text-neutral hover:text-white"><i class="fa fa-youtube-play text-xl"></i></a><a href="#" class="text-neutral hover:text-white"><i class="fa fa-instagram text-xl"></i></a></div></div>
+        <div><h3 class="text-xl font-bold mb-4">快速链接</h3><ul class="space-y-2"><li><a href="index.html" class="text-neutral hover:text-white">首页</a></li><li><a href="policy.html" class="text-neutral hover:text-white">政策知识</a></li><li><a href="heritage.html" class="text-neutral hover:text-white">传承人物</a></li><li><a href="courses.html" class="text-neutral hover:text-white">学习课程</a></li><li><a href="technique.html" class="text-neutral hover:text-white">技艺技法</a></li><li><a href="gallery.html" class="text-neutral hover:text-white">影像资料</a></li></ul></div>
+        <div><h3 class="text-xl font-bold mb-4">更多资源</h3><ul class="space-y-2"><li><a href="history.html" class="text-neutral hover:text-white">历史渊源</a></li><li><a href="activities.html" class="text-neutral hover:text-white">活动新闻</a></li><li><a href="competition.html" class="text-neutral hover:text-white">竞赛信息</a></li><li><a href="products.html" class="text-neutral hover:text-white">文创产品</a></li><li><a href="international.html" class="text-neutral hover:text-white">国际交流</a></li><li><a href="about.html" class="text-neutral hover:text-white">关于我们</a></li></ul></div>
+        <div><h3 class="text-xl font-bold mb-4">联系我们</h3><ul class="space-y-2"><li class="flex items-start"><i class="fa fa-map-marker mt-1 mr-3 text-primary"></i><span class="text-neutral/70">山东省烟台市龙口市烟台南山学院</span></li><li class="flex items-center"><i class="fa fa-phone mr-3 text-primary"></i><span class="text-neutral/70">0535-1234567</span></li><li class="flex items-center"><i class="fa fa-envelope mr-3 text-primary"></i><span class="text-neutral/70">douquzhufeng@example.com</span></li></ul></div>
+      </div>
+      <div class="border-t border-neutral/20 pt-8"><div class="flex flex-col md:flex-row justify-between items-center"><p class="text-neutral/60 text-sm mb-4 md:mb-0">&copy; 2025 中国空竹数据库系统. 保留所有权利.</p><div class="flex space-x-4"><a href="#" class="text-neutral/60 hover:text-white text-sm">隐私政策</a><a href="#" class="text-neutral/60 hover:text-white text-sm">使用条款</a><a href="#" class="text-neutral/60 hover:text-white text-sm">网站地图</a></div></div></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('menu-toggle').addEventListener('click', function() { document.getElementById('mobile-menu').classList.toggle('hidden'); });
+    const growthCtx = document.getElementById('growthChart').getContext('2d');
+    new Chart(growthCtx, {
+      type: 'line',
+      data: {
+        labels: ['2023Q1','2023Q2','2023Q3','2023Q4','2024Q1','2024Q2','2024Q3','2024Q4','2025Q1','2025Q2'],
+        datasets: [
+          { label: '传承人档案(人)', data: [8,15,22,25,27,29,30,31,32,32], borderColor: '#C53030', backgroundColor: 'rgba(197,48,48,0.1)', tension: 0.3, fill: true },
+          { label: '政策文献(条)', data: [20,45,68,85,105,120,138,148,152,156], borderColor: '#D69E2E', backgroundColor: 'rgba(214,158,46,0.1)', tension: 0.3, fill: true },
+          { label: '教学课程(集)', data: [5,12,18,25,30,35,40,45,47,48], borderColor: '#1A365D', backgroundColor: 'rgba(26,54,93,0.1)', tension: 0.3, fill: true },
+          { label: '活动新闻(篇)', data: [15,38,65,95,140,175,210,235,252,260], borderColor: '#38A169', backgroundColor: 'rgba(56,161,105,0.1)', tension: 0.3, fill: true }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { position: 'top' } },
+        scales: {
+          y: { beginAtZero: true, grid: { color: 'rgba(0,0,0,0.05)' } },
+          x: { grid: { display: false } }
+        }
+      }
+    });
+  </script>
+</body></html>

@@ -1,0 +1,167 @@
+<html lang="zh-CN"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>关于我们 - 中国空竹数据库系统</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { primary: '#C53030', secondary: '#D69E2E', tertiary: '#1A365D', neutral: '#F7FAFC', 'neutral-dark': '#2D3748' },
+          fontFamily: { 'zcool-xiaowei': ['"ZCOOL XiaoWei"', 'serif'], 'zcool-qingke': ['"ZCOOL QingKe HuangYou"', 'sans-serif'] },
+        },
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities { .content-auto { content-visibility: auto; } .text-shadow { text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); } .text-shadow-lg { text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7); } .animate-float { animation: float 3s ease-in-out infinite; } .animate-spin-slow { animation: spin 15s linear infinite; } }
+    @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-10px); } 100% { transform: translateY(0px); } }
+  </style>
+</head>
+<body class="font-sans bg-neutral text-neutral-dark">
+
+  <header id="navbar" class="fixed w-full top-0 z-50 bg-primary/90 text-white shadow-lg">
+    <nav>
+      <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+        <div class="flex items-center">
+          <div class="w-12 h-12 mr-3 relative"><div class="absolute inset-0 animate-spin-slow"><i class="fa fa-circle-o-notch text-secondary text-3xl"></i></div><div class="absolute inset-0 flex items-center justify-center"><i class="fa fa-circle text-primary text-2xl"></i></div></div>
+          <a href="index.html" class="text-2xl font-zcool-qingke tracking-wider">中国空竹数据库</a>
+        </div>
+        <div class="hidden md:flex space-x-6">
+          <a href="index.html" class="hover:text-secondary transition-colors duration-300">首页</a>
+          <a href="policy.html" class="hover:text-secondary transition-colors duration-300">政策知识</a>
+          <a href="heritage.html" class="hover:text-secondary transition-colors duration-300">传承人物</a>
+          <a href="activities.html" class="hover:text-secondary transition-colors duration-300">活动新闻</a>
+          <a href="courses.html" class="hover:text-secondary transition-colors duration-300">学习课程</a>
+          <a href="competition.html" class="hover:text-secondary transition-colors duration-300">竞赛信息</a>
+          <a href="products.html" class="hover:text-secondary transition-colors duration-300">文创产品</a>
+          <div class="relative group">
+            <a href="#" class="text-secondary font-bold transition-colors duration-300">更多 <i class="fa fa-angle-down ml-1"></i></a>
+            <div class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+              <a href="history.html" class="block px-4 py-2 text-neutral-dark hover:bg-primary hover:text-white rounded-t-lg text-sm">历史渊源</a>
+              <a href="technique.html" class="block px-4 py-2 text-neutral-dark hover:bg-primary hover:text-white text-sm">技艺技法</a>
+              <a href="gallery.html" class="block px-4 py-2 text-neutral-dark hover:bg-primary hover:text-white text-sm">影像资料</a>
+              <a href="international.html" class="block px-4 py-2 text-neutral-dark hover:bg-primary hover:text-white text-sm">国际交流</a>
+              <a href="database.html" class="block px-4 py-2 text-neutral-dark hover:bg-primary hover:text-white text-sm">数据统计</a>
+              <a href="about.html" class="block px-4 py-2 text-neutral-dark hover:bg-primary hover:text-white rounded-b-lg text-sm font-bold">关于我们</a>
+            </div>
+          </div>
+        </div>
+        <button id="menu-toggle" class="md:hidden text-white text-2xl focus:outline-none"><i class="fa fa-bars"></i></button>
+      </div>
+      <div id="mobile-menu" class="md:hidden hidden bg-primary/95 py-4 px-4 shadow-lg">
+        <div class="flex flex-col space-y-3">
+          <a href="index.html" class="hover:text-secondary py-1">首页</a><a href="policy.html" class="hover:text-secondary py-1">政策知识</a><a href="heritage.html" class="hover:text-secondary py-1">传承人物</a><a href="activities.html" class="hover:text-secondary py-1">活动新闻</a><a href="courses.html" class="hover:text-secondary py-1">学习课程</a><a href="competition.html" class="hover:text-secondary py-1">竞赛信息</a><a href="products.html" class="hover:text-secondary py-1">文创产品</a>
+          <hr class="border-white/20">
+          <a href="history.html" class="hover:text-secondary py-1">历史渊源</a><a href="technique.html" class="hover:text-secondary py-1">技艺技法</a><a href="gallery.html" class="hover:text-secondary py-1">影像资料</a><a href="international.html" class="hover:text-secondary py-1">国际交流</a><a href="database.html" class="hover:text-secondary py-1">数据统计</a><a href="about.html" class="text-secondary font-bold py-1">关于我们</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <section class="relative pt-28 pb-16 bg-tertiary text-white">
+    <div class="container mx-auto px-4 text-center">
+      <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-zcool-xiaowei mb-4">关于我们</h1>
+      <div class="w-24 h-1 bg-secondary mx-auto mb-6"></div>
+      <p class="text-lg text-white/80 max-w-3xl mx-auto">了解中国空竹数据库系统的开发背景、团队成员和发展愿景</p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+
+      <div class="max-w-4xl mx-auto mb-20">
+        <h2 class="text-3xl font-zcool-xiaowei text-tertiary mb-8 text-center">项目背景</h2>
+        <div class="bg-neutral rounded-2xl p-8 leading-relaxed space-y-5 text-neutral-dark/80">
+          <p>抖空竹是中国传统体育游艺的杰出代表，承载着中华民族悠久的历史记忆和丰富的文化内涵。然而，随着现代化进程的加速和人们生活方式的改变，空竹非遗面临着传承人老龄化严重、青年传承断层、原生技艺资料加速流失、大众认知度不足等多重危机。据统计，现有的国家级和省级空竹代表性传承人中，超过60%年龄在60岁以上，年轻一代对空竹文化的了解和兴趣普遍不足。</p>
+          <p>在这一背景下，烟台南山学院"抖趣竹风"大学生创新创业团队于2023年正式成立，由市级抖空竹代表性传承人杨文哲担任团队负责人。团队以"新一代轻青传承者"为定位，汇聚了来自体育教育、数字媒体、计算机科学、文化产业管理等多个专业的优秀大学生，是一支跨学科、产学研联动的青年非遗创新力量。</p>
+          <p>团队依托烟台南山学院非遗工坊和校内外专家顾问团队，拥有完整的抖空竹技艺知识产权体系，聚焦"数字化记录 + 体验式传播 + 商业化转化"三位一体模式，致力于通过数字技术手段推动空竹非遗的活态传承与创新发展，让濒临失传的抖空竹非遗走进年轻一代的日常生活。</p>
+        </div>
+      </div>
+
+      <div class="max-w-4xl mx-auto mb-20">
+        <h2 class="text-3xl font-zcool-xiaowei text-tertiary mb-8 text-center">核心团队成员</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-white rounded-xl shadow-lg overflow-hidden text-center group">
+            <div class="h-56 overflow-hidden"><img src="https://picsum.photos/400/600?random=60" alt="杨文哲" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"></div>
+            <div class="p-5">
+              <span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full mb-2 inline-block">项目负责人</span>
+              <h3 class="text-xl font-bold text-tertiary mb-1">杨文哲</h3>
+              <p class="text-neutral-dark/60 text-sm mb-3">市级抖空竹代表性传承人</p>
+              <p class="text-neutral-dark/70 text-sm leading-relaxed">自幼习练空竹，师从国家级传承人，精通六大核心技法和50余种花式动作。负责项目整体规划、技艺传承体系构建和非遗工坊管理。</p>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl shadow-lg overflow-hidden text-center group">
+            <div class="h-56 overflow-hidden"><img src="https://picsum.photos/400/600?random=61" alt="团队成员" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"></div>
+            <div class="p-5">
+              <span class="bg-secondary/10 text-secondary text-xs px-3 py-1 rounded-full mb-2 inline-block">技术负责人</span>
+              <h3 class="text-xl font-bold text-tertiary mb-1">李明远</h3>
+              <p class="text-neutral-dark/60 text-sm mb-3">计算机科学与技术专业</p>
+              <p class="text-neutral-dark/70 text-sm leading-relaxed">负责数据库系统架构设计、前端开发、VR/AI智能教学平台技术研发，以及空竹非遗数字化保护方案的技术实现。</p>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl shadow-lg overflow-hidden text-center group">
+            <div class="h-56 overflow-hidden"><img src="https://picsum.photos/400/600?random=62" alt="团队成员" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"></div>
+            <div class="p-5">
+              <span class="bg-tertiary/10 text-tertiary text-xs px-3 py-1 rounded-full mb-2 inline-block">运营负责人</span>
+              <h3 class="text-xl font-bold text-tertiary mb-1">王晓雨</h3>
+              <p class="text-neutral-dark/60 text-sm mb-3">文化产业管理专业</p>
+              <p class="text-neutral-dark/70 text-sm leading-relaxed">负责全媒体传播策略制定、文创产品设计开发、文旅研学项目运营，以及商业化模式的探索和实践。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="max-w-4xl mx-auto mb-20">
+        <h2 class="text-3xl font-zcool-xiaowei text-tertiary mb-8 text-center">"一赋三守一融新"体系</h2>
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+          <div class="bg-neutral rounded-xl p-5 text-center"><div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3"><span class="text-primary font-bold text-xl">一赋</span></div><h4 class="font-bold text-tertiary mb-2">数字化赋能</h4><p class="text-neutral-dark/70 text-sm">搭建空竹非遗数据库，完成技艺数字化记录与留存</p></div>
+          <div class="bg-neutral rounded-xl p-5 text-center"><div class="w-14 h-14 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-3"><span class="text-secondary font-bold text-xl">守技</span></div><h4 class="font-bold text-tertiary mb-2">守技艺之本</h4><p class="text-neutral-dark/70 text-sm">完整记录传承六大核心技法与经典花式动作</p></div>
+          <div class="bg-neutral rounded-xl p-5 text-center"><div class="w-14 h-14 bg-tertiary/10 rounded-full flex items-center justify-center mx-auto mb-3"><span class="text-tertiary font-bold text-xl">守人</span></div><h4 class="font-bold text-tertiary mb-2">守传承之人</h4><p class="text-neutral-dark/70 text-sm">建立传承人档案，培养新一代青年空竹传承力量</p></div>
+          <div class="bg-neutral rounded-xl p-5 text-center"><div class="w-14 h-14 bg-[#38A169]/10 rounded-full flex items-center justify-center mx-auto mb-3"><span class="text-[#38A169] font-bold text-xl">守物</span></div><h4 class="font-bold text-tertiary mb-2">守文化之物</h4><p class="text-neutral-dark/70 text-sm">收集保护传统空竹实物、文献资料和历史影像</p></div>
+          <div class="bg-neutral rounded-xl p-5 text-center"><div class="w-14 h-14 bg-[#805AD5]/10 rounded-full flex items-center justify-center mx-auto mb-3"><span class="text-[#805AD5] font-bold text-xl">融新</span></div><h4 class="font-bold text-tertiary mb-2">融合创新</h4><p class="text-neutral-dark/70 text-sm">VR/AI教学、国潮文创、康养课程等多元化创新发展</p></div>
+        </div>
+      </div>
+
+      <div class="max-w-4xl mx-auto mb-20">
+        <h2 class="text-3xl font-zcool-xiaowei text-tertiary mb-8 text-center">知识产权声明</h2>
+        <div class="bg-neutral rounded-2xl p-8 space-y-4 text-neutral-dark/70 leading-relaxed">
+          <p>中国空竹数据库系统（以下简称"本系统"）由烟台南山学院"抖趣竹风"大学生创新创业团队独立设计、开发和运营。本系统涉及的以下知识产权内容受中华人民共和国相关法律法规保护：</p>
+          <div class="space-y-3 ml-4">
+            <div class="flex items-start"><span class="text-primary mr-2">&#8226;</span><p><strong class="text-tertiary">软件著作权</strong>：本系统的源代码、数据库架构、页面布局和交互设计构成计算机软件作品，依法享有著作权保护。</p></div>
+            <div class="flex items-start"><span class="text-primary mr-2">&#8226;</span><p><strong class="text-tertiary">课程著作权</strong>："扬竹康养十式"课程体系及其配套教学资料为本团队原创作品，享有完整的著作权。</p></div>
+            <div class="flex items-start"><span class="text-primary mr-2">&#8226;</span><p><strong class="text-tertiary">商标权</strong>："抖趣竹风""扬竹康养"等品牌名称和标识为本团队注册商标或正在申请中的商标。</p></div>
+            <div class="flex items-start"><span class="text-primary mr-2">&#8226;</span><p><strong class="text-tertiary">数据所有权</strong>：本系统内收录的传承人档案、技艺动作数据、政策文献摘编等数据库内容，其汇编著作权归本团队所有。</p></div>
+            <div class="flex items-start"><span class="text-primary mr-2">&#8226;</span><p><strong class="text-tertiary">专利权</strong>：智能空竹硬件产品中的传感器集成方案和结构设计已提交专利申请。</p></div>
+          </div>
+          <p class="text-sm text-neutral-dark/50 mt-4">未经烟台南山学院"抖趣竹风"团队书面授权，任何单位和个人不得对本系统进行复制、修改、反向工程、数据抓取或商业性使用。</p>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <a href="index.html" class="inline-block bg-tertiary hover:bg-tertiary/90 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 mr-4"><i class="fa fa-home mr-2"></i>返回首页</a>
+        <a href="database.html" class="inline-block bg-primary hover:bg-primary/90 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300">数据统计 <i class="fa fa-angle-right ml-2"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-neutral-dark text-white pt-16 pb-8">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div><h3 class="text-xl font-bold mb-4">关于我们</h3><p class="text-neutral/70 mb-4">中国空竹数据库系统由烟台南山学院"抖趣竹风"大学生创新创业团队开发，致力于空竹非遗数字化保护与传播。</p><div class="flex space-x-4"><a href="#" class="text-neutral hover:text-white"><i class="fa fa-weibo text-xl"></i></a><a href="#" class="text-neutral hover:text-white"><i class="fa fa-wechat text-xl"></i></a><a href="#" class="text-neutral hover:text-white"><i class="fa fa-youtube-play text-xl"></i></a><a href="#" class="text-neutral hover:text-white"><i class="fa fa-instagram text-xl"></i></a></div></div>
+        <div><h3 class="text-xl font-bold mb-4">快速链接</h3><ul class="space-y-2"><li><a href="index.html" class="text-neutral hover:text-white">首页</a></li><li><a href="policy.html" class="text-neutral hover:text-white">政策知识</a></li><li><a href="heritage.html" class="text-neutral hover:text-white">传承人物</a></li><li><a href="courses.html" class="text-neutral hover:text-white">学习课程</a></li><li><a href="technique.html" class="text-neutral hover:text-white">技艺技法</a></li><li><a href="gallery.html" class="text-neutral hover:text-white">影像资料</a></li></ul></div>
+        <div><h3 class="text-xl font-bold mb-4">更多资源</h3><ul class="space-y-2"><li><a href="history.html" class="text-neutral hover:text-white">历史渊源</a></li><li><a href="activities.html" class="text-neutral hover:text-white">活动新闻</a></li><li><a href="competition.html" class="text-neutral hover:text-white">竞赛信息</a></li><li><a href="products.html" class="text-neutral hover:text-white">文创产品</a></li><li><a href="international.html" class="text-neutral hover:text-white">国际交流</a></li><li><a href="about.html" class="text-neutral hover:text-white">关于我们</a></li></ul></div>
+        <div><h3 class="text-xl font-bold mb-4">联系我们</h3><ul class="space-y-2"><li class="flex items-start"><i class="fa fa-map-marker mt-1 mr-3 text-primary"></i><span class="text-neutral/70">山东省烟台市龙口市烟台南山学院</span></li><li class="flex items-center"><i class="fa fa-phone mr-3 text-primary"></i><span class="text-neutral/70">0535-1234567</span></li><li class="flex items-center"><i class="fa fa-envelope mr-3 text-primary"></i><span class="text-neutral/70">douquzhufeng@example.com</span></li></ul></div>
+      </div>
+      <div class="border-t border-neutral/20 pt-8"><div class="flex flex-col md:flex-row justify-between items-center"><p class="text-neutral/60 text-sm mb-4 md:mb-0">&copy; 2025 中国空竹数据库系统. 保留所有权利.</p><div class="flex space-x-4"><a href="#" class="text-neutral/60 hover:text-white text-sm">隐私政策</a><a href="#" class="text-neutral/60 hover:text-white text-sm">使用条款</a><a href="#" class="text-neutral/60 hover:text-white text-sm">网站地图</a></div></div></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('menu-toggle').addEventListener('click', function() { document.getElementById('mobile-menu').classList.toggle('hidden'); });
+  </script>
+</body></html>

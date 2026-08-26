@@ -1,0 +1,198 @@
+<html lang="zh-CN"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>空竹技艺技法大全 - 中国空竹数据库系统</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { primary: '#C53030', secondary: '#D69E2E', tertiary: '#1A365D', neutral: '#F7FAFC', 'neutral-dark': '#2D3748' },
+          fontFamily: { 'zcool-xiaowei': ['"ZCOOL XiaoWei"', 'serif'], 'zcool-qingke': ['"ZCOOL QingKe HuangYou"', 'sans-serif'] },
+        },
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities { .content-auto { content-visibility: auto; } .text-shadow { text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); } .text-shadow-lg { text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7); } .animate-float { animation: float 3s ease-in-out infinite; } .animate-spin-slow { animation: spin 15s linear infinite; } }
+    @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-10px); } 100% { transform: translateY(0px); } }
+  </style>
+</head>
+<body class="font-sans bg-neutral text-neutral-dark">
+
+  <header id="navbar" class="fixed w-full top-0 z-50 bg-primary/90 text-white shadow-lg">
+    <nav>
+      <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+        <div class="flex items-center">
+          <div class="w-12 h-12 mr-3 relative"><div class="absolute inset-0 animate-spin-slow"><i class="fa fa-circle-o-notch text-secondary text-3xl"></i></div><div class="absolute inset-0 flex items-center justify-center"><i class="fa fa-circle text-primary text-2xl"></i></div></div>
+          <a href="index.html" class="text-2xl font-zcool-qingke tracking-wider">中国空竹数据库</a>
+        </div>
+        <div class="hidden md:flex space-x-6">
+          <a href="index.html" class="hover:text-secondary transition-colors duration-300">首页</a>
+          <a href="policy.html" class="hover:text-secondary transition-colors duration-300">政策知识</a>
+          <a href="heritage.html" class="hover:text-secondary transition-colors duration-300">传承人物</a>
+          <a href="activities.html" class="hover:text-secondary transition-colors duration-300">活动新闻</a>
+          <a href="courses.html" class="hover:text-secondary transition-colors duration-300">学习课程</a>
+          <a href="competition.html" class="hover:text-secondary transition-colors duration-300">竞赛信息</a>
+          <a href="products.html" class="hover:text-secondary transition-colors duration-300">文创产品</a>
+          <div class="relative group">
+            <a href="#" class="text-secondary font-bold transition-colors duration-300">更多 <i class="fa fa-angle-down ml-1"></i></a>
+            <div class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+              <a href="history.html" class="block px-4 py-2 text-neutral-dark hover:bg-primary hover:text-white rounded-t-lg text-sm">历史渊源</a>
+              <a href="technique.html" class="block px-4 py-2 text-neutral-dark hover:bg-primary hover:text-white text-sm font-bold">技艺技法</a>
+              <a href="gallery.html" class="block px-4 py-2 text-neutral-dark hover:bg-primary hover:text-white text-sm">影像资料</a>
+              <a href="international.html" class="block px-4 py-2 text-neutral-dark hover:bg-primary hover:text-white text-sm">国际交流</a>
+              <a href="database.html" class="block px-4 py-2 text-neutral-dark hover:bg-primary hover:text-white text-sm">数据统计</a>
+              <a href="about.html" class="block px-4 py-2 text-neutral-dark hover:bg-primary hover:text-white rounded-b-lg text-sm">关于我们</a>
+            </div>
+          </div>
+        </div>
+        <button id="menu-toggle" class="md:hidden text-white text-2xl focus:outline-none"><i class="fa fa-bars"></i></button>
+      </div>
+      <div id="mobile-menu" class="md:hidden hidden bg-primary/95 py-4 px-4 shadow-lg">
+        <div class="flex flex-col space-y-3">
+          <a href="index.html" class="hover:text-secondary py-1">首页</a><a href="policy.html" class="hover:text-secondary py-1">政策知识</a><a href="heritage.html" class="hover:text-secondary py-1">传承人物</a><a href="activities.html" class="hover:text-secondary py-1">活动新闻</a><a href="courses.html" class="hover:text-secondary py-1">学习课程</a><a href="competition.html" class="hover:text-secondary py-1">竞赛信息</a><a href="products.html" class="hover:text-secondary py-1">文创产品</a>
+          <hr class="border-white/20">
+          <a href="history.html" class="hover:text-secondary py-1">历史渊源</a><a href="technique.html" class="text-secondary font-bold py-1">技艺技法</a><a href="gallery.html" class="hover:text-secondary py-1">影像资料</a><a href="international.html" class="hover:text-secondary py-1">国际交流</a><a href="database.html" class="hover:text-secondary py-1">数据统计</a><a href="about.html" class="hover:text-secondary py-1">关于我们</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <section class="relative pt-28 pb-16 bg-tertiary text-white">
+    <div class="container mx-auto px-4 text-center">
+      <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-zcool-xiaowei mb-4">空竹技艺技法大全</h1>
+      <div class="w-24 h-1 bg-secondary mx-auto mb-6"></div>
+      <p class="text-lg text-white/80 max-w-3xl mx-auto">系统收录抖空竹核心技法体系、经典花式动作与科学训练方法</p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+
+      <div class="max-w-5xl mx-auto mb-20">
+        <h2 class="text-3xl font-zcool-xiaowei text-tertiary mb-8 text-center">六大核心技法体系</h2>
+        <p class="text-center text-neutral-dark/70 mb-12 max-w-2xl mx-auto">抖空竹六大核心技法"抖、捞、盘、绕、抛、接"是空竹技艺的根本，所有花式动作均由此六法派生而出，经数百年传承演变，已形成系统化的技术体系。</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 border-t-4 border-primary">
+            <div class="flex items-center mb-4"><div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mr-4"><span class="text-primary font-bold text-2xl">一</span></div><h3 class="text-xl font-bold text-tertiary">抖 · 基本抖法</h3></div>
+            <p class="text-neutral-dark/70 text-sm leading-relaxed mb-3">"抖"是空竹所有技法的基础和核心。通过双手协调上下拉动绳索，使空竹在绳索上保持高速平稳旋转。基本抖法分为正抖（右手在上）和反抖（左手在上）两种，要求身体放松、手腕灵活、力度均匀。初学者需首先掌握平稳抖动，能在无外力辅助下持续抖动2分钟以上方可进入下一步学习。</p>
+            <div class="flex flex-wrap gap-2"><span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded-full">正抖</span><span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded-full">反抖</span><span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded-full">基础技法</span></div>
+          </div>
+          <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 border-t-4 border-secondary">
+            <div class="flex items-center mb-4"><div class="w-14 h-14 bg-secondary/10 rounded-full flex items-center justify-center mr-4"><span class="text-secondary font-bold text-2xl">二</span></div><h3 class="text-xl font-bold text-tertiary">捞 · 捞取技法</h3></div>
+            <p class="text-neutral-dark/70 text-sm leading-relaxed mb-3">"捞"指用绳索从下方将空竹托起并接回的正常运转。分为正捞（从身前捞起）和反捞（从身后捞起），要求动作流畅、力度精准、时机把控恰当。捞技是所有抛接类动作的基础，熟练后可派生"海底捞月""怀中抱月"等经典花式。</p>
+            <div class="flex flex-wrap gap-2"><span class="bg-secondary/10 text-secondary text-xs px-2 py-1 rounded-full">正捞</span><span class="bg-secondary/10 text-secondary text-xs px-2 py-1 rounded-full">反捞</span><span class="bg-secondary/10 text-secondary text-xs px-2 py-1 rounded-full">衔接技法</span></div>
+          </div>
+          <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 border-t-4 border-tertiary">
+            <div class="flex items-center mb-4"><div class="w-14 h-14 bg-tertiary/10 rounded-full flex items-center justify-center mr-4"><span class="text-tertiary font-bold text-2xl">三</span></div><h3 class="text-xl font-bold text-tertiary">盘 · 盘绳技法</h3></div>
+            <p class="text-neutral-dark/70 text-sm leading-relaxed mb-3">"盘"指将绳索缠绕在空竹轴心部位的技巧，通过盘绳可以改变空竹的运动方向和轨迹，是创造复杂花式动作的关键技法。包括单盘、双盘、正盘、反盘四种基本盘法。盘技的难度在于掌握绳索缠绕的圈数和松紧度，需要大量的手感练习。</p>
+            <div class="flex flex-wrap gap-2"><span class="bg-tertiary/10 text-tertiary text-xs px-2 py-1 rounded-full">单盘</span><span class="bg-tertiary/10 text-tertiary text-xs px-2 py-1 rounded-full">双盘</span><span class="bg-tertiary/10 text-tertiary text-xs px-2 py-1 rounded-full">缠绕技巧</span></div>
+          </div>
+          <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 border-t-4 border-[#38A169]">
+            <div class="flex items-center mb-4"><div class="w-14 h-14 bg-[#38A169]/10 rounded-full flex items-center justify-center mr-4"><span class="text-[#38A169] font-bold text-2xl">四</span></div><h3 class="text-xl font-bold text-tertiary">绕 · 绕身技法</h3></div>
+            <p class="text-neutral-dark/70 text-sm leading-relaxed mb-3">"绕"指空竹围绕身体各部位进行圆周运动的技巧，包括绕颈、绕腰、绕腿、绕臂等多种变化。绕技要求身体与空竹的运动协调一致，具有很强的观赏性。绕身过程中需保持空竹转速稳定，防止因速度下降导致脱落。绕技是表演性空竹的重要组成部分。</p>
+            <div class="flex flex-wrap gap-2"><span class="bg-[#38A169]/10 text-[#38A169] text-xs px-2 py-1 rounded-full">绕颈</span><span class="bg-[#38A169]/10 text-[#38A169] text-xs px-2 py-1 rounded-full">绕腰</span><span class="bg-[#38A169]/10 text-[#38A169] text-xs px-2 py-1 rounded-full">表演技法</span></div>
+          </div>
+          <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 border-t-4 border-[#805AD5]">
+            <div class="flex items-center mb-4"><div class="w-14 h-14 bg-[#805AD5]/10 rounded-full flex items-center justify-center mr-4"><span class="text-[#805AD5] font-bold text-2xl">五</span></div><h3 class="text-xl font-bold text-tertiary">抛 · 抛接技法</h3></div>
+            <p class="text-neutral-dark/70 text-sm leading-relaxed mb-3">"抛"是空竹技法中最具视觉冲击力的动作类别，将空竹向上或向不同方向抛出后准确接回的技巧。包括高抛（垂直向上3米以上）、侧抛、后抛、旋转抛等多种形式，可单人完成也可双人配合。抛技对空间感和时间判断能力要求极高，是高级空竹表演的核心技术。</p>
+            <div class="flex flex-wrap gap-2"><span class="bg-[#805AD5]/10 text-[#805AD5] text-xs px-2 py-1 rounded-full">高抛</span><span class="bg-[#805AD5]/10 text-[#805AD5] text-xs px-2 py-1 rounded-full">侧抛</span><span class="bg-[#805AD5]/10 text-[#805AD5] text-xs px-2 py-1 rounded-full">高级技法</span></div>
+          </div>
+          <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 border-t-4 border-[#DD6B20]">
+            <div class="flex items-center mb-4"><div class="w-14 h-14 bg-[#DD6B20]/10 rounded-full flex items-center justify-center mr-4"><span class="text-[#DD6B20] font-bold text-2xl">六</span></div><h3 class="text-xl font-bold text-tertiary">接 · 承接技法</h3></div>
+            <p class="text-neutral-dark/70 text-sm leading-relaxed mb-3">"接"是所有抛、捞动作的收尾环节，是将空竹从空中或不同方位平稳接回绳索并恢复正常运转的技法。接技要求眼手协调、反应迅速、力度缓冲恰当。常见接法包括绳接、杆接、头顶接、脚背接等。接技的好坏直接影响整套动作的流畅度和安全性，是空竹技艺中不可忽视的重要环节。</p>
+            <div class="flex flex-wrap gap-2"><span class="bg-[#DD6B20]/10 text-[#DD6B20] text-xs px-2 py-1 rounded-full">绳接</span><span class="bg-[#DD6B20]/10 text-[#DD6B20] text-xs px-2 py-1 rounded-full">杆接</span><span class="bg-[#DD6B20]/10 text-[#DD6B20] text-xs px-2 py-1 rounded-full">收尾技法</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="max-w-5xl mx-auto mb-20">
+        <h2 class="text-3xl font-zcool-xiaowei text-tertiary mb-8 text-center">经典花式动作图谱</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="bg-neutral rounded-xl p-5 hover:shadow-lg transition-shadow duration-300"><div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-3"><span class="text-primary font-bold">01</span></div><h4 class="font-bold text-tertiary mb-2">金鸡上架</h4><p class="text-neutral-dark/70 text-sm">将空竹从腿部下方穿过并向上抛起，在头顶上方用绳接住，动作如金鸡独立，考验腿部灵活性和抛接精准度。</p><span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full mt-2 inline-block">难度：★★★</span></div>
+          <div class="bg-neutral rounded-xl p-5 hover:shadow-lg transition-shadow duration-300"><div class="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center mb-3"><span class="text-secondary font-bold">02</span></div><h4 class="font-bold text-tertiary mb-2">翻山越岭</h4><p class="text-neutral-dark/70 text-sm">双臂交叉使空竹形成"8"字形运动轨迹，从身体一侧越过头顶到达另一侧，犹如翻越山峰，具有较强的视觉冲击力。</p><span class="text-xs bg-secondary/10 text-secondary px-2 py-1 rounded-full mt-2 inline-block">难度：★★</span></div>
+          <div class="bg-neutral rounded-xl p-5 hover:shadow-lg transition-shadow duration-300"><div class="w-12 h-12 bg-tertiary/10 rounded-full flex items-center justify-center mb-3"><span class="text-tertiary font-bold">03</span></div><h4 class="font-bold text-tertiary mb-2">织女纺线</h4><p class="text-neutral-dark/70 text-sm">模拟古代织女纺线的动作，将空竹在身前做快速的小圆周旋转，配合身体的摆动，给人一种柔美细腻的视觉感受。</p><span class="text-xs bg-tertiary/10 text-tertiary px-2 py-1 rounded-full mt-2 inline-block">难度：★★★</span></div>
+          <div class="bg-neutral rounded-xl p-5 hover:shadow-lg transition-shadow duration-300"><div class="w-12 h-12 bg-[#38A169]/10 rounded-full flex items-center justify-center mb-3"><span class="text-[#38A169] font-bold">04</span></div><h4 class="font-bold text-tertiary mb-2">夜观银河</h4><p class="text-neutral-dark/70 text-sm">将空竹以极高的速度垂直向上抛出3-5米，在空中旋转的空竹哨口发出的声音如同夜空中的星光闪烁，极具观赏性。</p><span class="text-xs bg-[#38A169]/10 text-[#38A169] px-2 py-1 rounded-full mt-2 inline-block">难度：★★★★</span></div>
+          <div class="bg-neutral rounded-xl p-5 hover:shadow-lg transition-shadow duration-300"><div class="w-12 h-12 bg-[#805AD5]/10 rounded-full flex items-center justify-center mb-3"><span class="text-[#805AD5] font-bold">05</span></div><h4 class="font-bold text-tertiary mb-2">抬头望月</h4><p class="text-neutral-dark/70 text-sm">身体后仰呈弓形，将空竹从身体后方抛过头部，在身体前方用绳接住，形如仰望天空明月，动作优美舒展。</p><span class="text-xs bg-[#805AD5]/10 text-[#805AD5] px-2 py-1 rounded-full mt-2 inline-block">难度：★★★★</span></div>
+          <div class="bg-neutral rounded-xl p-5 hover:shadow-lg transition-shadow duration-300"><div class="w-12 h-12 bg-[#DD6B20]/10 rounded-full flex items-center justify-center mb-3"><span class="text-[#DD6B20] font-bold">06</span></div><h4 class="font-bold text-tertiary mb-2">海底捞月</h4><p class="text-neutral-dark/70 text-sm">弯腰下蹲，将空竹在贴近地面处进行捞取动作，模拟从海底捞起月亮，是展示身体柔韧性和空竹控制力的高难度经典动作。</p><span class="text-xs bg-[#DD6B20]/10 text-[#DD6B20] px-2 py-1 rounded-full mt-2 inline-block">难度：★★★★</span></div>
+          <div class="bg-neutral rounded-xl p-5 hover:shadow-lg transition-shadow duration-300"><div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-3"><span class="text-primary font-bold">07</span></div><h4 class="font-bold text-tertiary mb-2">双龙戏珠</h4><p class="text-neutral-dark/70 text-sm">同时操控两个空竹（双手各一），使两个空竹在空中做对称或交替运动，如同两条龙争夺一颗珍珠，是高级团体表演中的经典动作。</p><span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full mt-2 inline-block">难度：★★★★★</span></div>
+          <div class="bg-neutral rounded-xl p-5 hover:shadow-lg transition-shadow duration-300"><div class="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center mb-3"><span class="text-secondary font-bold">08</span></div><h4 class="font-bold text-tertiary mb-2">众星捧月</h4><p class="text-neutral-dark/70 text-sm">多人（通常6-10人）围成圆圈同时抖空竹，配合音乐节奏进行统一的动作编排，空竹如同群星围绕月亮，气势恢宏。</p><span class="text-xs bg-secondary/10 text-secondary px-2 py-1 rounded-full mt-2 inline-block">难度：团体★★★★</span></div>
+        </div>
+      </div>
+
+      <div class="max-w-5xl mx-auto mb-20">
+        <h2 class="text-3xl font-zcool-xiaowei text-tertiary mb-8 text-center">空竹器材分类与选择</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-white rounded-xl shadow-lg p-8">
+            <h3 class="text-xl font-bold text-tertiary mb-4 flex items-center"><i class="fa fa-cog text-primary text-2xl mr-3"></i>按结构分类</h3>
+            <div class="space-y-4">
+              <div class="flex items-start"><div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0"><span class="text-primary font-bold text-sm">单轮</span></div><div class="text-neutral-dark/70 text-sm">只有一个旋转轮盘，另一侧为木质手柄头。单轮空竹较轻便、灵活，适合学习复杂花式动作，是竞技表演中最常用的类型。适合中高级爱好者。</div></div>
+              <div class="flex items-start"><div class="w-10 h-10 bg-secondary/10 rounded-full flex items-center justify-center mr-3 shrink-0"><span class="text-secondary font-bold text-sm">双轮</span></div><div class="text-neutral-dark/70 text-sm">两侧各有一个旋转轮盘，对称结构使其稳定性更好。双轮空竹较重、噪音较大，动作相对稳定，适合初学者入门和团体表演使用。</div></div>
+              <div class="flex items-start"><div class="w-10 h-10 bg-tertiary/10 rounded-full flex items-center justify-center mr-3 shrink-0"><span class="text-tertiary font-bold text-sm">异形</span></div><div class="text-neutral-dark/70 text-sm">包括三层轮、四层轮、椭球形、葫芦形等特殊结构空竹，多为特制表演道具，声音效果和视觉效果独特，适合特殊表演场合。</div></div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl shadow-lg p-8">
+            <h3 class="text-xl font-bold text-tertiary mb-4 flex items-center"><i class="fa fa-cube text-secondary text-2xl mr-3"></i>按材质分类</h3>
+            <div class="space-y-4">
+              <div class="flex items-start"><div class="w-10 h-10 bg-[#38A169]/10 rounded-full flex items-center justify-center mr-3 shrink-0"><i class="fa fa-tree text-[#38A169]"></i></div><div class="text-neutral-dark/70 text-sm"><strong class="text-tertiary">竹木空竹</strong>——传统工艺制作，采用优质毛竹或硬木手工打造，音色纯正浑厚，手感温润，是传统空竹的代表，适合收藏和传统表演。</div></div>
+              <div class="flex items-start"><div class="w-10 h-10 bg-[#805AD5]/10 rounded-full flex items-center justify-center mr-3 shrink-0"><i class="fa fa-industry text-[#805AD5]"></i></div><div class="text-neutral-dark/70 text-sm"><strong class="text-tertiary">塑料空竹</strong>——现代工业产品，重量轻、价格低、耐摔打，颜色丰富，适合儿童启蒙和学校集体教学使用，但不适合专业竞技。</div></div>
+              <div class="flex items-start"><div class="w-10 h-10 bg-[#DD6B20]/10 rounded-full flex items-center justify-center mr-3 shrink-0"><i class="fa fa-microchip text-[#DD6B20]"></i></div><div class="text-neutral-dark/70 text-sm"><strong class="text-tertiary">智能空竹</strong>——内置智能传感器的新一代科技空竹，可实时监测转速、角度和动作轨迹，通过蓝牙连接APP进行数据分析，是空竹数字化的发展方向。</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-3xl font-zcool-xiaowei text-tertiary mb-8 text-center">学习路径规划</h2>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <div class="bg-neutral rounded-xl p-6 text-center relative">
+            <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-primary text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">1</div>
+            <h4 class="font-bold text-tertiary mt-2 mb-2">启蒙阶段</h4>
+            <p class="text-neutral-dark/70 text-sm">了解空竹结构，学习正确握竿姿势和启动方法，掌握基本抖法（正抖反抖），能平稳抖动1分钟以上。建议学习周期：2-4周。</p>
+          </div>
+          <div class="bg-neutral rounded-xl p-6 text-center relative">
+            <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-secondary text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">2</div>
+            <h4 class="font-bold text-tertiary mt-2 mb-2">基础阶段</h4>
+            <p class="text-neutral-dark/70 text-sm">掌握捞、盘两大技法，学会"翻山越岭""金鸡上架"等5-8个基础花式动作，能独立完成2分钟的规定套路表演。学习周期：1-3个月。</p>
+          </div>
+          <div class="bg-neutral rounded-xl p-6 text-center relative">
+            <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-tertiary text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">3</div>
+            <h4 class="font-bold text-tertiary mt-2 mb-2">进阶阶段</h4>
+            <p class="text-neutral-dark/70 text-sm">全面掌握六大技法，熟练运用绕身、抛接等高级技术，学习20个以上花式动作，能进行有一定难度的个人表演编排。学习周期：3-12个月。</p>
+          </div>
+          <div class="bg-neutral rounded-xl p-6 text-center relative">
+            <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-[#38A169] text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">4</div>
+            <h4 class="font-bold text-tertiary mt-2 mb-2">竞技/表演阶段</h4>
+            <p class="text-neutral-dark/70 text-sm">创编个人风格化的表演套路，掌握双空竹同时操控和团体配合技术，具备参加各级空竹比赛的能力，可从事空竹教学和传承工作。学习周期：1年以上。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-16">
+        <a href="index.html" class="inline-block bg-tertiary hover:bg-tertiary/90 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 mr-4"><i class="fa fa-home mr-2"></i>返回首页</a>
+        <a href="gallery.html" class="inline-block bg-primary hover:bg-primary/90 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300">影像资料 <i class="fa fa-angle-right ml-2"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-neutral-dark text-white pt-16 pb-8">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div><h3 class="text-xl font-bold mb-4">关于我们</h3><p class="text-neutral/70 mb-4">中国空竹数据库系统致力于收集、整理和传播空竹非遗文化。由烟台南山学院"抖趣竹风"大学生创新创业团队开发。</p><div class="flex space-x-4"><a href="#" class="text-neutral hover:text-white"><i class="fa fa-weibo text-xl"></i></a><a href="#" class="text-neutral hover:text-white"><i class="fa fa-wechat text-xl"></i></a><a href="#" class="text-neutral hover:text-white"><i class="fa fa-youtube-play text-xl"></i></a><a href="#" class="text-neutral hover:text-white"><i class="fa fa-instagram text-xl"></i></a></div></div>
+        <div><h3 class="text-xl font-bold mb-4">快速链接</h3><ul class="space-y-2"><li><a href="index.html" class="text-neutral hover:text-white">首页</a></li><li><a href="policy.html" class="text-neutral hover:text-white">政策知识</a></li><li><a href="heritage.html" class="text-neutral hover:text-white">传承人物</a></li><li><a href="courses.html" class="text-neutral hover:text-white">学习课程</a></li><li><a href="technique.html" class="text-neutral hover:text-white">技艺技法</a></li><li><a href="gallery.html" class="text-neutral hover:text-white">影像资料</a></li></ul></div>
+        <div><h3 class="text-xl font-bold mb-4">更多资源</h3><ul class="space-y-2"><li><a href="history.html" class="text-neutral hover:text-white">历史渊源</a></li><li><a href="activities.html" class="text-neutral hover:text-white">活动新闻</a></li><li><a href="competition.html" class="text-neutral hover:text-white">竞赛信息</a></li><li><a href="products.html" class="text-neutral hover:text-white">文创产品</a></li><li><a href="international.html" class="text-neutral hover:text-white">国际交流</a></li><li><a href="about.html" class="text-neutral hover:text-white">关于我们</a></li></ul></div>
+        <div><h3 class="text-xl font-bold mb-4">联系我们</h3><ul class="space-y-2"><li class="flex items-start"><i class="fa fa-map-marker mt-1 mr-3 text-primary"></i><span class="text-neutral/70">山东省烟台市龙口市烟台南山学院</span></li><li class="flex items-center"><i class="fa fa-phone mr-3 text-primary"></i><span class="text-neutral/70">0535-1234567</span></li><li class="flex items-center"><i class="fa fa-envelope mr-3 text-primary"></i><span class="text-neutral/70">douquzhufeng@example.com</span></li></ul></div>
+      </div>
+      <div class="border-t border-neutral/20 pt-8"><div class="flex flex-col md:flex-row justify-between items-center"><p class="text-neutral/60 text-sm mb-4 md:mb-0">&copy; 2025 中国空竹数据库系统. 保留所有权利.</p><div class="flex space-x-4"><a href="#" class="text-neutral/60 hover:text-white text-sm">隐私政策</a><a href="#" class="text-neutral/60 hover:text-white text-sm">使用条款</a><a href="#" class="text-neutral/60 hover:text-white text-sm">网站地图</a></div></div></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('menu-toggle').addEventListener('click', function() { document.getElementById('mobile-menu').classList.toggle('hidden'); });
+  </script>
+</body></html>
